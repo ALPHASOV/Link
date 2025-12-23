@@ -407,11 +407,19 @@ def main():
     """
     主函数
     """
+    import argparse
+    parser = argparse.ArgumentParser(description='增强版函数与需求映射分析器')
+    parser.add_argument('--md_file', default="/root/finallink/llm_result.md", help='需求文档路径')
+    parser.add_argument('--txt_dir', default="/root/finallink/output", help='函数列表目录')
+    parser.add_argument('--output_file', default="/root/finallink/detailed_link_analysis_report.md", help='输出报告路径')
+    parser.add_argument('--api_key', help='OpenAI API密钥')
+    args = parser.parse_args()
+
     print("=== 增强版函数与需求映射分析器 ===")
     print("本程序将使用ChatGPT API建立函数名称与需求标题的精确映射关系")
     
-    # 使用预配置的API密钥
-    api_key = OPENAI_API_KEY
+    # 使用配置的API密钥
+    api_key = args.api_key if args.api_key else OPENAI_API_KEY
     print(f"使用预配置的API: {DEFAULT_LLM}")
     
     try:
@@ -419,9 +427,9 @@ def main():
         linker = EnhancedFileLinker(api_key)
         
         # 文件路径
-        md_file = "/root/finallink/llm_result.md"
-        txt_dir = "/root/finallink/output"
-        output_file = "/root/finallink/detailed_link_analysis_report.md"
+        md_file = args.md_file
+        txt_dir = args.txt_dir
+        output_file = args.output_file
         
         # 读取文件
         print("\n正在读取文件...")
