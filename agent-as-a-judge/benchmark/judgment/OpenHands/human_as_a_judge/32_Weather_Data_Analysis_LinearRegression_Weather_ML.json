@@ -1,0 +1,91 @@
+{
+    "name": "32_Weather_Data_Analysis_LinearRegression_Weather_ML",
+    "query": "Develop a weather data analysis system using a Linear Regression model on the Weather dataset from Kaggle. Load the dataset and perform feature engineering, including feature selection and generation and handle missing data using mean imputation or interpolation in `src/data_loader.py`. Then, apply the Linear Regression model should be implemented in `src/model.py`. Visualize and save the correlation matrix in `results/figures/correlation_matrix.png` and the prediction results as a line plot with confidence intervals in `results/figures/prediction_results.png`. Finally, create a detailed report covering data preprocessing, feature engineering, model training, and prediction results. Save the report in `results/weather_analysis_report.pdf`. The feature engineering process should be well-documented.",
+    "tags": [
+        "Regression",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Kaggle Weather\" dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Feature engineering, including feature selection and generation, is performed in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "Missing data is handled using mean imputation or interpolation in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "The \"Linear Regression\" model is used for weather data analysis and should be implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "The correlation matrix is saved as `results/figures/correlation_matrix.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "Prediction results are plotted and saved as a line plot  with confidence intervals. The plot is saved as `results/figures/prediction_results.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                2,
+                3,
+                5
+            ],
+            "criteria": "A detailed report containing data preprocessing, feature engineering, model training, and prediction results is created and saved as `results/weather_analysis_report.pdf`.",
+            "category": "Other",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The feature engineering process should be clearly documented in the report, explaining the rationale behind feature selection and generation.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The report should include a discussion on the correlation matrix, highlighting any interesting relationships between features.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": true,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

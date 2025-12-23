@@ -1,0 +1,93 @@
+{
+    "name": "33_Object_Detection_YOLOv3_COCO_DL",
+    "query": "Help me develop an object detection system using the YOLOv3 model and the COCO dataset. Download the dataset and preprocess the images by resizing and normalization in `src/data_loader.py`. Implement the YOLOv3 model and use Non-Maximum Suppression (NMS) to refine the results in `src/model.py`. Save the detected objects to `results/figures/`, and create an interactive Streamlit web page in `src/app.py` to display the detection results. Finally, evaluate the model's performance, including metrics such as mAP and inference time, and save the evaluation results to `results/metrics/model_performance.txt`. The system should properly manage the launch and termination of the Streamlit application to prevent unnecessary resource usage.",
+    "tags": [
+        "Computer Vision"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"COCO\" dataset downloading is implemented in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data preprocessing, including resizing and normalization of images, is performed in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "The \"YOLOv3\" model is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                1,
+                2
+            ],
+            "criteria": "\"Non-Maximum Suppression\" (NMS) is applied to refine detection results. Please implement this in `src/model.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "Detection results are saved to the specified folder `results/figures/`.",
+            "category": "Visualization",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                2,
+                3,
+                4
+            ],
+            "criteria": "An interactive web page in `src/app.py` using \"Streamlit\" is created to display detection results saved in `results/figures/`.",
+            "category": "Human Computer Interaction",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "Model performance evaluation results are saved in `results/metrics/model_performance.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": null
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The \"Streamlit\" web page should be user-friendly, allowing users to easily upload and view new images for detection.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The performence evalution includes mAP and inference time as metrics.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": " The system should properly manage the launch and termination of the Streamlit application.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

@@ -1,0 +1,98 @@
+{
+    "name": "20_Car_Price_Prediction_RandomForest_CarPrices_ML",
+    "query": "Can you help me create a car price prediction project using a Random Forest model with the Kaggle Car Prices dataset? Load the dataset and perform feature selection to identify important features in `src/data_loader.py`. Use cross-validation to evaluate the model in `src/train.py`. Save the R-squared score, Mean Squared Error (MSE), and Mean Absolute Error (MAE) to `results/metrics/results/metrics.txt`. Visualize the feature importance and save it to `results/figures/feature_importance.png`. Generate a Markdown report with insights into how the selected features contribute to the car price predictions. Saving the report as `results/report.md`.",
+    "tags": [
+        "Financial Analysis",
+        "Regression",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Kaggle Car Prices\" dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Feature selection is implemented to identify important features in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "The \"Random Forest\" regression model is used in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Cross-validation is used to evaluate the model in `src/train.py`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "The \"R-squared\" score, \"Mean Squared Error (MSE),\" and \"Mean Absolute Error (MAE)\" are saved in `results/metrics/results/metrics.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "Feature importances are visualized and saved as `results/figures/feature_importance.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "criteria": "A Markdown file containing results and visualizations is generated and saved as `results/report.md`.",
+            "category": "Visualization",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The feature selection process should be thorough, ensuring that only the most relevant features are used in the model.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The Markdown report should provide clear insights into how the selected features contribute to the car price predictions.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": true,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

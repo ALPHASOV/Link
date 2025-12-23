@@ -1,0 +1,99 @@
+{
+    "name": "16_Credit_Scoring_DecisionTree_GermanCredit_ML",
+    "query": "Help me develop a system to predict credit scores using the German Credit dataset, which can be downloaded from [this link](https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data). Load the dataset and preprocess it, including handling missing values and feature encoding, in `src/data_loader.py`. Use a Decision Tree classifier implemented in `src/model.py` with cross-validation to evaluate the model in `src/train.py`. Visualize feature importances in `results/figures/feature_importances.png`. Generate a classification report, including precision, recall, and F1-score, and save it to `results/metrics/classification_report.txt`. Create a Markdown report with results and visualizations and save it in `results/report.md`. The dataset should load smoothly with proper error handling, and the Markdown report should be well-organized for easy review.",
+    "tags": [
+        "Classification",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "Load the \"German Credit\" dataset, potentially downloading it from [this link](https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data) in the `src/data_loader.py` file.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data preprocessing is performed in `src/data_loader.py`, including handling missing values and feature encoding.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "A \"Decision Tree\" classifier is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                1,
+                2
+            ],
+            "criteria": "Cross-validation is used to evaluate the model in `src/train.py`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "Feature importances are visualized in `results/figures/feature_importances.png`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "A classification report, including \"precision,\" \"recall,\" and \"F1-score,\" is generated and saved as `results/metrics/classification_report.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "criteria": "A Markdown file containing results and visualizations is generated and saved in `results/report.md`.",
+            "category": "Visualization",
+            "satisfied": true
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The dataset should load smoothly, with clear error handling if any issues arise during download.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The Markdown report should be well-organized, making it easy to review all the results and visualizations.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": true,
+    "executed_successfully": true,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

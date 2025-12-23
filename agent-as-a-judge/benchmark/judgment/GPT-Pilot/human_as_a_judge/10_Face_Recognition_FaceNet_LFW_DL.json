@@ -1,0 +1,86 @@
+{
+    "name": "10_Face_Recognition_FaceNet_LFW_DL",
+    "query": "Help me create a PyTorch face recognition project using the FaceNet model with the LFW dataset. Load the dataset in `src/model.py`. Get the model from Hugging Face (you can find it at https://huggingface.co/py-feat/facenet) and save it in `models/saved_models/`. Ensure the data is preprocessed to ensure tha standardization of facial images in `src/data_loader.py`. Use facial embeddings in `src/model.py` to improve the performance of your system. Print the recognition accuracy and save it to `results/metrics/recognition_accuracy.txt`. Next, visualize the embedding results and save them as `results/figures/embedding_visualization.png`. The model should load without issues, ideally with some error handling if something goes wrong. The visualizations should make it easy to see how the embeddings represent distinct facial features.",
+    "tags": [
+        "Computer Vision",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"LFW\" (Labeled Faces in the Wild) dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data alignment and standardization of facial images is performed in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "The \"FaceNet\" model in \"PyTorch\" is used, loading from [Hugging Face](https://huggingface.co/py-feat/facenet). Save the model in models/saved_models/.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Facial embeddings are used in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "Recognition accuracy is printed and saved as `results/metrics/recognition_accuracy.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "Embedding results are visualized and saved as `results/figures/embedding_visualization.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The model loading process should be smooth, with clear handling of any issues if the model fails to load.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "Embedding visualizations should be clear and effectively highlight distinct facial features.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": false,
+    "is_web_navigation_needed": true,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

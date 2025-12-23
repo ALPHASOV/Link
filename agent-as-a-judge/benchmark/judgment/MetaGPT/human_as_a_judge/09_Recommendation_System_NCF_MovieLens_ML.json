@@ -1,0 +1,82 @@
+{
+    "name": "09_Recommendation_System_NCF_MovieLens_ML",
+    "query": "Help me develop a system to recommend movies based on user ratings from the MovieLens dataset using a Neural Collaborative Filtering (NCF) approach. First, load the dataset and split it into training and testing sets in `src/data_loader.py`. Next, implement the NCF approach and a matrix factorization baseline in `src/model.py`. Using these,  print an example of the top 10 recommendations for a test user the NCF approach and the baseline and save them to `results/metrics/top_10_recommendations.txt`. It would be good if these sample recommendations were meaningful given the test user. Evaluate the system's performance using RMSE, MAE, etc., and save the results of this evaluation to `results/metrics/evaluation_metrics.txt`. Try and ensure that there is robust path handling that can deal with missing directories and such when saving files.",
+    "tags": [
+        "Recommender Systems",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Neural Collaborative Filtering (NCF)\" algorithm is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [],
+            "criteria": "The \"MovieLens\" dataset is loaded in 'src/data_loader.py'.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "Data is split into training and testing sets in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "A matrix factorization baseline is implemented in  in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The top 10 recommendations for a test user under the \"NCF\" approach and the baseline are saved in `results/metrics/top_10_recommendations.txt`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The recommendation system performance is evaluated, including with \"RMSE\" and \"MAE,\" and the results are saved as `results/metrics/evaluation_metrics.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "Robust path handling is implemented to deal with things like missing directories.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The top 10 recommendations should be clear and relevant to the sample user's preferences.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

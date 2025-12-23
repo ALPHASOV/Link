@@ -1,0 +1,70 @@
+{
+    "name": "07_Image_Super_Resolution_SRCNN_Set5_DL",
+    "query": "Hi, I need to create a project for image super-resolution using the SRCNN model with the Set5 dataset (available from `https://huggingface.co/datasets/eugenesiow/Set5`). Load the dataset in `src/data_loader.py`. When loading the data, include image preprocessing steps such as resizing and normalization, all in `src/data_loader.py`. The SRCNN model should be loaded and used in `src/model.py`. Save 5 sets of comparison images, zooming in on details, as `results/figures/super_resolution_compare.png`, and the super-resolution results as `results/figures/super_resolution_results.png`.  The generated images should be high-quality and clearly show improvements.",
+    "tags": [
+        "Computer Vision",
+        "Generative Models"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Set5\" dataset (available from \"Hugging Face\") is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Image preprocessing, including resizing and normalization, is performed in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "The \"SRCNN\" model is used in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Five sets of comparison images are saved, with details zoomed in, and saved as `results/figures/super_resolution_compare.png`.",
+            "category": "Visualization",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Super-resolution results are saved as `results/figures/super_resolution_results.png`.",
+            "category": "Visualization",
+            "satisfied": null
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The project should generate high-quality, clear super-resolution images with detailed comparisons.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "Well-organized output images, highlighting key improvements, should be included.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": true
+}

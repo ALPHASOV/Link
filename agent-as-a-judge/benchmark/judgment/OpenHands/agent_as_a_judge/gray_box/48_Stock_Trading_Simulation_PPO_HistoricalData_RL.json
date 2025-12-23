@@ -1,0 +1,95 @@
+{
+    "name": "48_Stock_Trading_Simulation_PPO_HistoricalData_RL",
+    "query": "Hey! I'm interested in developing a stock trading agent using the Proximal Policy Optimization (PPO) algorithm. The idea is to use historical market data for training and testing. A stock trading simulation environment should be implemented in `src/env.py`. The Proximal Policy Optimization (PPO) algorithm should be implemented in `src/train.py`. Please save the trained agent under `models/saved_models/`. Record all the trade decisions in `results/trade_decisions.txt` and save the total profit in `results/metrics/total_profit.txt`. Visualize the profit curve and save it as `results/figures/profit_curve.png`. Generate a report that covers the trading strategy, profit, and risk analysis, and save it as `results/trading_strategy_report.md`. Implement an interactive tool using Streamlit in `src/visualize.py` that allows users to try different parameters and run simulations.",
+    "tags": [
+        "Financial Analysis",
+        "Reinforcement Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "A stock trading simulation environment is implemented in `src/env.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Historical market data is used for training and testing.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "The \"Proximal Policy Optimization (PPO)\" algorithm is implemented in `src/train.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                1,
+                2
+            ],
+            "criteria": "Trade decisions are recorded and saved as `results/trade_decisions.txt`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                3
+            ],
+            "criteria": "Total profit is saved as `results/metrics/total_profit.txt`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                4
+            ],
+            "criteria": "The profit curve is visualized and saved as `results/figures/profit_curve.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                4
+            ],
+            "criteria": "A report containing trading strategy, profit, and risk analysis is generated and saved as `results/trading_strategy_report.md`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 7,
+            "prerequisites": [
+                1,
+                2
+            ],
+            "criteria": "An interactive tool allowing users to try different parameters and run simulations using \"Streamlit\" is implemented in `src/visualize.py`.",
+            "category": "Human Computer Interaction",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The profit curve visualization should highlight significant trades or events that impacted performance.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The report should include insights on how parameter tuning affects the trading outcome.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

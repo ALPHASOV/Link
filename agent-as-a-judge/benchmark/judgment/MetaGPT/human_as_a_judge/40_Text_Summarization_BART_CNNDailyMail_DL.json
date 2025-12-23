@@ -1,0 +1,93 @@
+{
+    "name": "40_Text_Summarization_BART_CNNDailyMail_DL",
+    "query": "Develop a system that performs text summarization system using the BART model with the CNN/Daily Mail dataset. Start by loading and preparing the dataset in `src/data_loader.py`, then perform data preprocessing such as removing HTML tags and punctuation in `src/data_loader.py`. Import a pre-trained BART model for text summarization in `src/model.py` to generate summaries. Save the generated summaries to `results/summaries.txt`. Visualize the length distribution of these summaries using seaborn and save the visualization to `results/figures/summary_length_distribution.png`. Additionally, implement an interactive Streamlit web page in `src/visualize.py`, which allows users to view input texts and their generated summaries. Finally, generate a report covering data preprocessing and generation results, and save it as `results/text_summarization_report.pdf`.",
+    "tags": [
+        "Generative Models",
+        "Natural Language Processing"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"CNN/Daily Mail\" news dataset is used, including loading and preparing the dataset in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data preprocessing is performed in `src/data_loader.py`, including removing HTML tags and punctuation.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "A pre-trained \"BART\" model is imported for text summarization in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                1,
+                2
+            ],
+            "criteria": "The generated summary results are saved in `results/summary_results.txt`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                3
+            ],
+            "criteria": "The length distribution of the generated summaries is visualized using \"seaborn,\" and the plot is saved as `results/figures/summary_length_distribution.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                3
+            ],
+            "criteria": "An interactive web page is created using \"Streamlit\" to display input texts and their generated summaries and implemented in `src/visualize.py`.",
+            "category": "Human Computer Interaction",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                3
+            ],
+            "criteria": "A report covering data preprocessing, model training, and generation results is generated and saved as `results/text_summarization_report.pdf`.",
+            "category": "Other",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The interactive \"Streamlit\" webpage should allow users to input new text and generate summaries in real-time.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The report should include a discussion on how different hyperparameter settings affected the model's performance.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "During development, the \"Streamlit\" application should be efficiently managed to avoid unnecessary resource usage.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": false,
+    "is_web_navigation_needed": false,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

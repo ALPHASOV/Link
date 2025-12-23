@@ -1,0 +1,73 @@
+{
+    "name": "06_Sentiment_Analysis_SVM_Sentiment140_ML",
+    "query": "Please help me build a system for sentiment analysis on tweets using the Sentiment140 dataset available from Hugging Face. Load the Sentiment140 dataset and, when loading the data, clean it by removing stop words, punctuation, and special characters, all in `src/data_loader.py`. Use Word2Vec or GloVe for text vectorization. This should occur in `src/data_loader.py`. Next, implement and train an SVM classifier in `src/model.py`. Finally, write a report of the accuracy of the classifier to `results/metrics/accuracy_score.txt`. Ideally, the report should be easily interpretable.",
+    "tags": [
+        "Natural Language Processing",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Sentiment140\" dataset, available from \"Hugging Face,\" is obtained in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "The dataset is cleaned, including by removing stop words, punctuation, and special characters, all in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "Word embeddings, either \"Word2Vec\" or \"GloVe,\" are used to convert text to vectors in `src/data_loader.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "An \"SVM classifier\" is implemented and trained in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "The accuracy score is printed and saved as `results/metrics/accuracy_score.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The dataset download process should be reliable, with clear error handling.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The final accuracy report should be straightforward and easy to interpret.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

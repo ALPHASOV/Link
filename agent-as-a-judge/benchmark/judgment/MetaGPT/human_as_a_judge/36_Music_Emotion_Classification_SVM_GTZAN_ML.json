@@ -1,0 +1,104 @@
+{
+    "name": "36_Music_Emotion_Classification_SVM_GTZAN_ML",
+    "query": "Help me develop a project for music emotion classification using an SVM model with the GTZAN dataset. The project should include audio preprocessing using librosa for noise removal and normalization, MFCC feature extraction with 13 coefficients, and the use of a linear SVM classifier with hyperparameter tuning. The dataset loading, audio preprocessing, including noise removal and normalization, and MFCC feature extraction must be implemented in `src/data_loader.py`. Implement the SVM classifier in `src/model.py`. Save the classification results to `results/predictions.txt`, visualize audio spectrograms with librosa (saving them to `results/figures/`), and create an interactive webpage in `src/app.py` with Streamlit that allows real-time audio file uploads and displays both classification results and spectrograms in results/figures/. Ensure efficient resource management with attention to automatically managing the launch and termination of the Streamlit webpage.",
+    "tags": [
+        "Audio Processing",
+        "Classification"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The GTZAN music emotion loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Audio preprocessing, including noise removal and normalization, is performed in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "MFCC feature extraction is implemented in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                1,
+                2
+            ],
+            "criteria": "A \"SVM classifier\" is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                3
+            ],
+            "criteria": "The classification results are saved in `results/predictions.txt`.",
+            "category": "Other",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "Audio spectrograms are visualized with \"librosa\" and saved to `results/figures/`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "criteria": "An interactive web page is created in `src/app.py` using \"Streamlit\" to display classification results and spectrograms in results/figures/.",
+            "category": "Human Computer Interaction",
+            "satisfied": true
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The \"Streamlit\" webpage should allow users to upload new audio files and view the classification results in real-time.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The spectrogram visualizations should include options to adjust the frequency range and time resolution for deeper analysis.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "The system should perform efficient resource management especially on managing the launch and termination of the Streamlit webpage.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

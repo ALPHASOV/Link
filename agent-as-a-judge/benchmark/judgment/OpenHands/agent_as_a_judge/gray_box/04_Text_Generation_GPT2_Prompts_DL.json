@@ -1,0 +1,77 @@
+{
+    "name": "04_Text_Generation_GPT2_Prompts_DL",
+    "query": "Please build a text generation system by automatically downloading a pre-trained GPT-2 model which you then cache in `models/saved_models/`. The system should receive prompts through loading the current contents of a text file named `data/prompt.txt` which, for demonstration purposes, should contain only the text \"who are you?\" in your implementation. You should automatically correct any typos you run into while reading `data/prompt.txt`. Ensure the generated text is limited to a maximum of 200 characters and your program should save the generated text to `results/generated_text.txt`. Implement post-processing to clean up the generated text by removing extra spaces and correcting common spelling errors. It would be ideal if the system could handle different variations of input prompts efficiently, even with minor typos. Additionally, a user-friendly output format in the saved file (perhaps with timestamps or prompt identifiers) would be nice to have.",
+    "tags": [
+        "Generative Models",
+        "Natural Language Processing"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "A pre-trained \"GPT-2\" model is downloaded and cached in `models/saved_models/`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [],
+            "criteria": "Prompts are read from a text file named `data/prompt.txt` and fed into the model.",
+            "category": "Human Computer Interaction",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "Generation length is limited to a maximum of 200 characters.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Post-processing is implemented to clean up the text, including removing extra spaces and correcting common spelling errors.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The generated text is saved in `results/generated_text.txt`.",
+            "category": "Other",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The system should handle different input prompts efficiently and correct for minor typos.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The system should operate efficiently, with minimal latency during text generation.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "A user-friendly output format in the saved file, perhaps with timestamps or prompt identifiers, should be used.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": false,
+    "is_web_navigation_needed": false
+}

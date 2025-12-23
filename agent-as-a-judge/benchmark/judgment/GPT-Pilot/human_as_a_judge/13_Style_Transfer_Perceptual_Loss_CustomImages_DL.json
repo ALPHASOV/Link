@@ -1,0 +1,97 @@
+{
+    "name": "13_Style_Transfer_Perceptual_Loss_CustomImages_D",
+    "query": "Please create a PyTorch project for image style transfer using a pre-trained VGG16 model. Load the VGG16 model in `src/model.py`. The project should combine content and style images, allow smooth adjustment of style intensity by tuning the weights of style loss and content loss, and save the stylized images in `results/figures/`. Additionally, log the processing time to `results/processing_time.txt`, and save the intermediate results of the style transfer process to `results/figures/intermediate_results.png`. For testing, input a famous content image (Mona Lisa) from [this link](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/768px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg) and a famous style image (The Starry Night) from [this link](https://ia904705.us.archive.org/34/items/the-starry-night-vincent-van-gogh/The%20Starry%20Night%20-%20Vincent%20van%20Gogh/%21PREVIEW%21%20-%20The%20Starry%20Night%20-%20Vincent%20van%20Gogh.jpg), and generate a style-transfered image. Save the content, style, and style-transfered images to `data/content.jpg`, `data/style.jpg`, and `results/figures/`, respectively. The project should efficiently handle high-resolution images without excessive processing time.",
+    "tags": [
+        "Computer Vision",
+        "Generative Models"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "A famous content image is inputted for testing, downloaded from [this link](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/768px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg) and saved to `data/content.jpg`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [],
+            "criteria": "A famous style image is inputted for testing, downloaded from [this link](https://ia904705.us.archive.org/34/items/the-starry-night-vincent-van-gogh/The%20Starry%20Night%20-%20Vincent%20van%20Gogh/%21PREVIEW%21%20-%20The%20Starry%20Night%20-%20Vincent%20van%20Gogh.jpg) and saved in `data/style.jpg`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "The pre-trained \"VGG16\" model implemented in \"PyTorch\" is loaded in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Stylized images are saved to the specified folder `results/figures/`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Style intensity is adjusted by tuning the weights of style loss and content loss in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ],
+            "criteria": "Processing time is recorded and saved as `results/processing_time.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ],
+            "criteria": "Intermediate results of style transfer are saved as `results/figures/intermediate_results.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The style transfer process should allow for smooth adjustment of style intensity, making the stylized image visually appealing.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The project should handle high-resolution images efficiently without excessive processing time.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": false,
+    "is_web_navigation_needed": false,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

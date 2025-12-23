@@ -1,0 +1,94 @@
+{
+    "name": "14_Customer_Churn_Prediction_LogisticRegression_Telco_ML",
+    "query": "Help me develop a system to predict customer churn using the Telco Customer Churn dataset, potentially being downloaded from [this link](https://huggingface.co/datasets/scikit-learn/churn-prediction). Load the dataset in `src/data_loader.py`. The project should include feature engineering, such as feature selection and scaling, and handle imbalanced data using oversampling or undersampling techniques implemented in `src/data_loader.py`. The exact details of this are left for you to decide. Implement a Logistic Regression model in `src/model.py` and perform cross-validation while training the model in `src/train.py`. Finally, print and save the classification report (including precision, recall, and F1-score) to `results/metrics/classification_report.txt`, and save a ROC curve to `results/figures/roc_curve.png`. Ensure the dataset loads smoothly with appropriate error handling. The feature engineering should thoroughly select the most relevant features.",
+    "tags": [
+        "Classification",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Telco Customer Churn\" dataset is used, potentially being downloaded from [this link](https://huggingface.co/datasets/scikit-learn/churn-prediction). Load the dataset in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Feature engineering, including feature selection and scaling, is implemented in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Imbalanced data is handled using oversampling or undersampling techniques in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "The \"Logistic Regression\" model is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "Cross-validation is used to evaluate the model in `src/train.py`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ],
+            "criteria": "A classification report, including \"precision,\" \"recall,\" and \"F1-score,\" is saved as `results/metrics/classification_report.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ],
+            "criteria": "A \"ROC curve\" is saved as `results/figures/roc_curve.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The dataset should load smoothly, with proper error handling if issues arise during download.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The feature engineering process should be thorough, ensuring that the most relevant features are selected for the model.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": true
+}

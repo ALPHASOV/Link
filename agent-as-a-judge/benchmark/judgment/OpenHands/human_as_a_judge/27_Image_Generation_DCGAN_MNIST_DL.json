@@ -1,0 +1,96 @@
+{
+    "name": "27_Image_Generation_DCGAN_MNIST_DL",
+    "query": "I need to create a system for image generation using a DCGAN model with the MNIST`dataset. Load the MNIST dataset in `src/data_loader.py` and implement the DCGAN model in `src/model.py`. The system should ensure the use of the correct DCGAN architecture, save the generated images to `results/figures/`, monitor the model training by recording training loss under `results/metrics/` and generated images under `results/figures/`, and performe a hyperparameter search on the generation parameters such as noise vector dimensions and learning rate in `src/train.py` to improve performance. Additionally, create and save a GIF animation of the generated images to `results/figures/generated_images.gif`, present the training process and results in a well-structured Jupyter Notebook, and convert the Notebook into a polished PDF report saved as `results/training_report.pdf`. The DCGAN model architecture should be clearly documented in the Notebook to avoid confusion with other GAN variants.",
+    "tags": [
+        "Computer Vision",
+        "Generative Models"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"MNIST\" dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [],
+            "criteria": "The \"DCGAN\" model, not a standard GAN, is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "Generated images are saved to the specified folder `results/figures/`.",
+            "category": "Save Trained Model",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "The model training is monitored by recording training loss saved under `results/metrics/` and generated images saved under results/figures/.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "A hyperparemeter search method to search parameters such as noise vector dimensions and learning rate is implemented in `src/train.py` to improve model performance.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "criteria": "A GIF animation of generated images is created and saved as `results/figures/generated_images.gif`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "criteria": "The training process and results are presented in a Jupyter Notebook, and converted to a PDF report, and saved as `results/training_report.pdf`.",
+            "category": "Visualization",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The DCGAN model architecture should be clearly documented in the Notebook to avoid confusion with other GAN variants.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The PDF report should be well-structured, with clear sections for model architecture, training process, results, and future improvements.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

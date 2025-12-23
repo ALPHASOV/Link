@@ -1,0 +1,99 @@
+{
+    "name": "37_Lane_Detection_ResNet50_TuSimple_DL",
+    "query": "Develop a lane detection system. Start by importing the standard pre-trained ResNet-50 model from PyTorch in `src/model.py`. We'll work here with the TuSimple lane detection dataset as our test dataset, which should be loaded through `src/data_loader.py`. Then load and preprocess the dataset, including data augmentation techniques such as random cropping, rotation, and scaling in `src/data_loader.py`. Fine-tune the model and save the detection accuracy in `results/metrics/detection_accuracy.txt`, and save the trained model as `models/saved_models/lane_detection_model.pth`. Split a subset of the data for validation, implemented in `src/data_loader.py`. Visualize detection results using matplotlib and save them to `results/figures/`. Create a detailed report of the entire process, including data preprocessing, model training, and evaluation, and save it as `results/lane_detection_report.pdf`. The report should also analyze the model's performance under challenging conditions such as curves or poor lighting.",
+    "tags": [
+        "Computer Vision"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"TuSimple\" lane detection dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data augmentation, including random cropping, rotation, and scaling, is performed in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "A subset of the data is split for validation and implemented in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "The pre-trained \"ResNet-50\" model is imported from PyTorch in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "Fine tune the \"ResNet-50\" model and save it as `models/saved_models/lane_detection_model.pth`.",
+            "category": "Save Trained Model",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                4
+            ],
+            "criteria": "Detection accuracy is saved as `results/metrics/detection_accuracy.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                4
+            ],
+            "criteria": "Detection results are visualized with \"matplotlib\" and saved to `results/figures/`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 7,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "criteria": "A detailed report containing data preprocessing, model training, and evaluation process is created and saved as `results/lane_detection_report.pdf`.",
+            "category": "Other",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The report should include an analysis of the model's performance on challenging scenarios, such as curves or poor lighting conditions.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The data augmentation steps should be well-documented, with examples of augmented images included in the report.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

@@ -1,0 +1,94 @@
+{
+    "name": "49_Explainable_AI_LIME_Titanic_ML",
+    "query": "Hi there! I'm looking to create a project that explains model predictions using LIME, specifically with the Titanic survival prediction dataset. First, load the dataset in `src/data_loader.py`.Then, train a Random Forest classifier and save it under `models/saved_models/`? Finally, use LIME to explain the Random Forest classifier predictions and implement it in `src/visualize.py`. Generate a report including the explanations and save it as `results/model_explanation.md`. The report should be built with either Dash or Bokeh, implemented in `src/report.py`, so users can explore how different features affect the model's predictions. The explanation should be clear and easy to understand for non-tech folks.  Additionally, save a well-labeled intuitive feature importance plot in `results/figures/feature_importance.png`. Thanks!",
+    "tags": [
+        "Classification"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Titanic\" survival prediction dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "A \"Random Forest classifier\" is trained for survival prediction.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "\"LIME\" is used for model prediction explanation and implemented in `src/visualize.py`.",
+            "category": "Human Computer Interaction",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "A model prediction explanation report is generated and saved as `results/model_explanation.md`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2
+            ],
+            "criteria": "A feature importance plot is saved as `results/figures/feature_importance.png`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                4
+            ],
+            "criteria": "An interactive report showcasing the impact of different features on predictions is created using \"Dash\" or \"Bokeh\" and implemented in `src/report.py`.",
+            "category": "Other",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "The trained model is saved under `models/saved_models/`.",
+            "category": "Save Trained Model",
+            "satisfied": true
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The explanation report should be written in a clear and accessible style, making it understandable even for those without a deep technical background.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The feature importance plot should be visually intuitive, with clear labels and descriptions.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": true,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

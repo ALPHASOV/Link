@@ -1,0 +1,6 @@
+Selected features: Index(['feature1', 'feature2', 'feature3', 'feature4', 'feature5', 'feature6',
+       'feature7', 'feature8', 'feature9', 'feature10'],
+      dtype='object')
+Cross-validated RMSE scores: [0.28540323 0.3461573  0.34480114 0.37766893 0.28471238]
+Mean RMSE: 0.327748593896111
+Standard deviation of RMSE: 0.03678846341261786

@@ -1,0 +1,415 @@
+[
+  {
+    "component_name": "MAIN",
+    "source_keywords": [
+      "main()",
+      "system_config()",
+      "初始化",
+      "系统启动",
+      "模块初始化"
+    ],
+    "matched_data": [
+      {
+        "path": "root.system_architecture.main_controller.initialization.main()",
+        "keyword": "main()",
+        "type": "key"
+      },
+      {
+        "path": "root.system_architecture.main_controller.initialization.main()",
+        "keyword": "初始化",
+        "type": "value"
+      },
+      {
+        "path": "root.system_architecture.main_controller.initialization.main()",
+        "keyword": "模块初始化",
+        "type": "value"
+      },
+      {
+        "path": "root.system_architecture.main_controller.initialization.system_config()",
+        "keyword": "system_config()",
+        "type": "key"
+      },
+      {
+        "path": "root.system_architecture.main_controller.initialization.startup_sequence[0]",
+        "keyword": "初始化",
+        "type": "list_item"
+      },
+      {
+        "path": "root.system_architecture.main_controller.initialization.startup_sequence[1]",
+        "keyword": "初始化",
+        "type": "list_item"
+      },
+      {
+        "path": "root.system_architecture.main_controller.initialization.startup_sequence[1]",
+        "keyword": "模块初始化",
+        "type": "list_item"
+      },
+      {
+        "path": "root.hardware_interfaces.analog_inputs.ADC_Init()",
+        "keyword": "初始化",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.analog_inputs.ADC_Init()",
+        "keyword": "模块初始化",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.timing_control.GPT_Init()",
+        "keyword": "初始化",
+        "type": "value"
+      },
+      {
+        "path": "root.system_monitoring.status_control.SCS_Init()",
+        "keyword": "初始化",
+        "type": "value"
+      },
+      {
+        "path": "root.api_reference.initialization_apis.System_Init()",
+        "keyword": "初始化",
+        "type": "value"
+      },
+      {
+        "path": "root.api_reference.initialization_apis.Hardware_Init()",
+        "keyword": "初始化",
+        "type": "value"
+      },
+      {
+        "path": "root.api_reference.initialization_apis.Software_Init()",
+        "keyword": "初始化",
+        "type": "value"
+      }
+    ]
+  },
+  {
+    "component_name": "ADC",
+    "source_keywords": [
+      "ADC_Init()",
+      "ADC_Read(channel)",
+      "模拟转换",
+      "信号采集",
+      "ADC",
+      "模拟信号"
+    ],
+    "matched_data": [
+      {
+        "path": "root.system_architecture.main_controller.modules.ADC",
+        "keyword": "ADC",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.analog_inputs.ADC_channels",
+        "keyword": "ADC",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.analog_inputs.ADC_Init()",
+        "keyword": "ADC_Init()",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.analog_inputs.ADC_Init()",
+        "keyword": "ADC",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.analog_inputs.ADC_Init()",
+        "keyword": "ADC",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.analog_inputs.ADC_Read(channel)",
+        "keyword": "ADC_Read(channel)",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.analog_inputs.ADC_Read(channel)",
+        "keyword": "ADC",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.analog_inputs.ADC_Read(channel)",
+        "keyword": "模拟信号",
+        "type": "value"
+      }
+    ]
+  },
+  {
+    "component_name": "CAN",
+    "source_keywords": [
+      "CAN_SendMessage()",
+      "CAN_Receive()",
+      "总线通信",
+      "消息传输",
+      "CAN",
+      "通信协议"
+    ],
+    "matched_data": [
+      {
+        "path": "root.system_architecture.main_controller.modules.CAN",
+        "keyword": "CAN",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.communication.CAN_interface",
+        "keyword": "CAN",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.communication.CAN_interface.message_format",
+        "keyword": "CAN",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.communication.CAN_interface.CAN_SendMessage()",
+        "keyword": "CAN_SendMessage()",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.communication.CAN_interface.CAN_SendMessage()",
+        "keyword": "CAN",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.communication.CAN_interface.CAN_SendMessage()",
+        "keyword": "CAN",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.communication.CAN_interface.CAN_Receive()",
+        "keyword": "CAN_Receive()",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.communication.CAN_interface.CAN_Receive()",
+        "keyword": "CAN",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.communication.CAN_interface.CAN_Receive()",
+        "keyword": "CAN",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.communication.protocols.CANopen",
+        "keyword": "CAN",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.communication.protocols.CANopen",
+        "keyword": "CAN",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.communication.protocols.J1939",
+        "keyword": "通信协议",
+        "type": "value"
+      }
+    ]
+  },
+  {
+    "component_name": "GPT",
+    "source_keywords": [
+      "GPT_Init()",
+      "GPT_StartTimer()",
+      "定时控制",
+      "时间管理",
+      "定时器",
+      "计时"
+    ],
+    "matched_data": [
+      {
+        "path": "root.system_architecture.main_controller.modules.GPT",
+        "keyword": "定时器",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.timing_control.timer_modules.GPT0",
+        "keyword": "定时器",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.timing_control.timer_modules.GPT1",
+        "keyword": "定时器",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.timing_control.timer_modules.GPT2",
+        "keyword": "定时器",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.timing_control.GPT_Init()",
+        "keyword": "GPT_Init()",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.timing_control.GPT_Init()",
+        "keyword": "定时器",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.timing_control.GPT_StartTimer()",
+        "keyword": "GPT_StartTimer()",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.timing_control.GPT_StartTimer()",
+        "keyword": "定时器",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.timing_control.GPT_StartTimer()",
+        "keyword": "计时",
+        "type": "value"
+      },
+      {
+        "path": "root.system_monitoring.status_control.fault_detection.watchdog_timer",
+        "keyword": "定时器",
+        "type": "value"
+      }
+    ]
+  },
+  {
+    "component_name": "IO",
+    "source_keywords": [
+      "IO_SetLED()",
+      "IO_ReadButton()",
+      "GPIO控制",
+      "外设接口",
+      "输入输出",
+      "LED",
+      "按钮"
+    ],
+    "matched_data": [
+      {
+        "path": "root.system_architecture.main_controller.modules.IO",
+        "keyword": "输入输出",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.gpio_ports.port_A",
+        "keyword": "输入输出",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.gpio_ports.port_B",
+        "keyword": "输入输出",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.gpio_ports.port_C",
+        "keyword": "输入输出",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.IO_SetLED()",
+        "keyword": "IO_SetLED()",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.IO_SetLED()",
+        "keyword": "LED",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.IO_SetLED()",
+        "keyword": "LED",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.IO_ReadButton()",
+        "keyword": "IO_ReadButton()",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.IO_ReadButton()",
+        "keyword": "按钮",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.led_indicators",
+        "keyword": "LED",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.led_indicators.power_led",
+        "keyword": "LED",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.led_indicators.status_led",
+        "keyword": "LED",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.led_indicators.error_led",
+        "keyword": "LED",
+        "type": "key"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.button_inputs.reset_button",
+        "keyword": "按钮",
+        "type": "value"
+      },
+      {
+        "path": "root.hardware_interfaces.digital_io.button_inputs.mode_button",
+        "keyword": "按钮",
+        "type": "value"
+      }
+    ]
+  },
+  {
+    "component_name": "SCS",
+    "source_keywords": [
+      "SCS_CheckStatus()",
+      "SCS_Init()",
+      "状态检测",
+      "系统监控",
+      "状态管理",
+      "监控"
+    ],
+    "matched_data": [
+      {
+        "path": "root.system_architecture.main_controller.modules.SCS",
+        "keyword": "监控",
+        "type": "value"
+      },
+      {
+        "path": "root.system_monitoring.status_control.SCS_Init()",
+        "keyword": "SCS_Init()",
+        "type": "key"
+      },
+      {
+        "path": "root.system_monitoring.status_control.SCS_Init()",
+        "keyword": "监控",
+        "type": "value"
+      },
+      {
+        "path": "root.system_monitoring.status_control.SCS_CheckStatus()",
+        "keyword": "SCS_CheckStatus()",
+        "type": "key"
+      },
+      {
+        "path": "root.system_monitoring.status_control.monitoring_parameters.cpu_usage",
+        "keyword": "监控",
+        "type": "value"
+      },
+      {
+        "path": "root.system_monitoring.status_control.monitoring_parameters.memory_usage",
+        "keyword": "监控",
+        "type": "value"
+      },
+      {
+        "path": "root.system_monitoring.status_control.monitoring_parameters.temperature",
+        "keyword": "监控",
+        "type": "value"
+      },
+      {
+        "path": "root.system_monitoring.status_control.monitoring_parameters.voltage_levels",
+        "keyword": "监控",
+        "type": "value"
+      }
+    ]
+  }
+]

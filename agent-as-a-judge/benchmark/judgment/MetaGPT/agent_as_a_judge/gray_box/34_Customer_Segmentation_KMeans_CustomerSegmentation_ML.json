@@ -1,0 +1,88 @@
+{
+    "name": "34_Customer_Segmentation_KMeans_CustomerSegmentation_ML",
+    "query": "I need to create a customer segmentation system using the K-means clustering algorithm with the Kaggle Customer Segmentation dataset. Start by standardizing the data in `src/data_loader.py`, then use the elbow method to determine the optimal number of clusters and save the elbow plot to `results/figures/elbow.jpg`. Implement the K-means algorithm in `src/model.py`. Save the cluster centers in `results/metrics/cluster_centers.txt`. Visualize the segmentation results using seaborn and save the plot as `results/figures/customer_segmentation.png`. Create an interactive Dash dashboard allowing dynamic exploration of the segments.",
+    "tags": [
+        "Unsupervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Kaggle Customer Segmentation\" dataset is used, including data loading and preparation in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data is standardized to ensure feature values are within the same range in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "The elbow method is used to determine the optimal number of clusters. Please save the elbow plot to `results/figures/elbow.jpg`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "The K-means clustering algorithm is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "Cluster centers are saved in `results/metrics/cluster_centers.txt`.",
+            "category": "Save Trained Model",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                2,
+                3,
+                4
+            ],
+            "criteria": "The Customer segmentation is visualized using \"seaborn,\" with the plot saved as `results/figures/customer_segmentation.png`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                2,
+                3,
+                4
+            ],
+            "criteria": "An interactive dashboard which allows dynamic exploration of the segments is created using \"Dash\".",
+            "category": "Human Computer Interaction",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The elbow plot clearly shows how the optimal number of clusters is determined.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": " The system properly manages the launch and termination of the dashboard.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": true,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

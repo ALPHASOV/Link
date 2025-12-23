@@ -1,0 +1,102 @@
+{
+    "name": "39_Drug_Response_Prediction_SVM_GDSC_ML",
+    "query": "Develop a system to predict drug response using the GDSC dataset with a Support Vector Machine (SVM) regressor. Load the dataset and perform feature selection to identify key features in `src/data_loader.py`. Implement the SVM regressor in `src/model.py`. Use cross-validation to evaluate the model's performance in `src/train.py`.  Save the performance results to `results/metrics/performance.txt`. Visualize the regression results using seaborn and save it under `results/figures/`. Next, create a report including the data preprocessing, model training, evaluation process, and the visualization. Save the report as `results/drug_response_prediction_report.pdf`. The report should emphasize how feature selection impacts the model's performance, and the regression results visualization should clearly highlight the relationship between the selected features and the predicted drug response. Ensure the system is designed to be easily extendable for incorporating additional datasets or new features.",
+    "tags": [
+        "Medical Analysis",
+        "Regression",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"GDSC\" drug response dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Feature selection is performed to identify important features in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "The \"SVM regressor\" is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                1,
+                2
+            ],
+            "criteria": "Cross-validation is used to evaluate the model in `src/train.py`.",
+            "category": "Performance Metrics",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The performance results are saved as `results/metrics/performance.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The regression results are visualized using \"seaborn,\" and saved to `results/figures/`.",
+            "category": "Visualization",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "criteria": "A report containing data preprocessing, model training, evaluation process, and the regression results visualization, is created and saved as `results/drug_response_prediction_report.pdf`.",
+            "category": "Other",
+            "satisfied": null
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The report should emphasize how feature selection impacts the model's performance.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The regression results visualization should clearly highlight the relationship between the selected features and the predicted drug response.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "Ensure that the system can be easily extended to incorporate additional datasets or new features without significant rework.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

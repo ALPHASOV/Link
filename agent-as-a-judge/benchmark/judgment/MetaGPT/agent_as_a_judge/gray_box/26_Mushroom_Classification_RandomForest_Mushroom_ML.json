@@ -1,0 +1,94 @@
+{
+    "name": "26_Mushroom_Classification_RandomForest_Mushroom_ML",
+    "query": "Develop a mushroom classification system using a Random Forest model on the UCI Mushroom dataset. Load the dataset in the `src/data_loader.py` file. Ensure that feature engineering, including feature encoding and feature selection, and missing data handling are completed in `src/data_loader.py` before training the model. Train the Random Forest classifier on the processed dataset in `src/train.py`. Save the classification results `results/classification_results.txt`. Visualize and save the feature importance as `results/figures/feature_importance.png`, ensuring the visualization clearly highlights the most influential features. Create an interactive web page in `src/app.py` using Streamlit to showcase the classification results and model performance. The Streamlit web page should provide an overview of the model's performance and allow users to interact with the classification results. The system should manages the start and end of the Streamlit visualization properly.",
+    "tags": [
+        "Classification",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"UCI Mushroom\" dataset is loaded in the `src/data_loader.py` file.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Feature engineering is performed, including feature encoding and feature selection in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "Missing data is handled to ensure the dataset is clean before training in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "A Random Forest classifier is trained on the processed dataset in `src/train.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "The classification results are saved in `results/classification_results.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "Feature importance is visualized and saved as `results/figures/feature_importance.png`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                2,
+                3,
+                4
+            ],
+            "criteria": "An interactive web page is created in `src/app.py` using \"Streamlit\" to showcase classification results and model performance.",
+            "category": "Human Computer Interaction",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The feature importance visualization should clearly highlight the most influential features, making it easy to interpret.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The Streamlit web page should provide an overview of the model's performance and allow users to interact with the classification results.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "The system properly manages the start and end of the Streamlit visualization .",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

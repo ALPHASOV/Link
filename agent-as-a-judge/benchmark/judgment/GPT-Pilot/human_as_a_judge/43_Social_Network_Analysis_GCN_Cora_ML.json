@@ -1,0 +1,94 @@
+{
+    "name": "43_Social_Network_Analysis_GCN_Cora_ML",
+    "query": "Hey! Could you help me create a social network analysis system using a GCN model with the Cora citation network dataset? First, let's load and preprocess the dataset, including normalization and denoising, in `src/data_loader.py`. Then, apply the GCN model to classify the nodes and tune the hyperparameters such as the learning rate and hidden layer size to get the best results in `src/train.py`. Save the model under `models/saved_models/`. Once you've done that, please save the node classification performance to `results/metrics/node_classification_results.txt`. Visualize the citation network structure and save it as `results/figures/citation_network_visualization.png`. Lastly, create an interactive network graph using either D3.js or Bokeh to showcase the node classification results and network visualization in `results/figures/`. It would also be great if your implementation could allow a programmer to easily swap to other citation datasets. Thanks a lot for your help!",
+    "tags": [
+        "Unsupervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Cora citation network\" dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data preprocessing is performed, including normalization and denoising, in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "Hyperparameters such as learning rate and hidden layer size are tuned to optimize the model in `src/train.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                2
+            ],
+            "criteria": "The model is saved under models/saved_models/.",
+            "category": "Save Trained Model",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2
+            ],
+            "criteria": "Node classification performance are saved in `results/metrics/node_classification_results.txt`.",
+            "category": "Performence Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                2
+            ],
+            "criteria": "The citation network structure is visualized and saved as `results/figures/citation_network_visualization.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                4,
+                5
+            ],
+            "criteria": "An interactive network graph is created using \"D3.js\" or \"Bokeh\" to showcase the node classification results and network visualization in results/figures/.",
+            "category": "Visualization",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The interactive network graph should allow users to explore individual nodes and their classifications dynamically.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The citation network visualization should clearly differentiate between different node classes and relationships.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "The system should be designed to handle additional citation datasets with minimal modification.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

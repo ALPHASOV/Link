@@ -1,0 +1,90 @@
+{
+    "name": "45_Product_Recommendation_MatrixFactorization_AmazonReviews_ML",
+    "query": "Could you help me set up a product recommendation system using a matrix factorization algorithm with the Electronics subset of the Amazon Reviews 2023 dataset? You should handle data loading and all the data preprocessing, including noise removal and normalization in `src/data_loader.py`. Apply a latent factor model to compute user-item interactions and save the implementation in `src/model.py`. Print and save the recommendation results to `results/recommendation_results.txt`. Then visualize these recommendations using the Plotly library and save the visualization as `results/figures/recommendation_visualization.html`. Finally, generate an analysis report covering data preprocessing, model training, and results, should be saved as `results/recommendation_report.md`.",
+    "tags": [
+        "Recommender Systems"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Electronics\" subset of the \"Amazon Reviews 2023\" dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data preprocessing is performed, including noise removal and normalization in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "A \"Latent Factor model\" to computer user-item interactions is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                2,
+                3
+            ],
+            "criteria": "Recommendation results are saved as `results/recommendation_results.txt`.",
+            "category": "Other",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                2,
+                3,
+                4
+            ],
+            "criteria": "Recommendation results are visualized using \"Plotly\" and saved as `results/figures/recommendation_visualization.html`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                2,
+                3,
+                4
+            ],
+            "criteria": "An analysis report containing data preprocessing, model training, and recommendation results is generated and saved as `results/recommendation_report.md`.",
+            "category": "Other",
+            "satisfied": true
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The impact of different preprocessing steps on recommendation accuracy should be discussed in the analysis report.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The visualization should be interactive, allowing users to explore the recommendation results for different products.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "The system should be designed to easily incorporate additional user behavior data or product features for future improvements.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

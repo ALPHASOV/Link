@@ -1,0 +1,139 @@
+{
+  "system_architecture": {
+    "main_controller": {
+      "initialization": {
+        "main()": "系统主入口函数，负责调用各模块初始化函数",
+        "system_config()": "系统配置函数，设置系统参数和工作模式",
+        "startup_sequence": ["硬件初始化", "模块初始化", "系统自检", "进入主循环"]
+      },
+      "modules": {
+        "ADC": "模拟数字转换模块",
+        "CAN": "控制器局域网通信模块",
+        "GPT": "通用定时器模块",
+        "IO": "输入输出控制模块",
+        "SCS": "系统状态监控模块"
+      }
+    }
+  },
+  "hardware_interfaces": {
+    "analog_inputs": {
+      "ADC_channels": {
+        "channel_0": "电压检测通道",
+        "channel_1": "电流检测通道",
+        "channel_2": "温度检测通道",
+        "channel_3": "压力检测通道"
+      },
+      "ADC_Init()": "ADC模块初始化函数，配置采样率和通道",
+      "ADC_Read(channel)": "读取指定通道的模拟信号值",
+      "sampling_rate": "1kHz",
+      "resolution": "12位",
+      "reference_voltage": "3.3V"
+    },
+    "communication": {
+      "CAN_interface": {
+        "baud_rate": "500kbps",
+        "message_format": "标准CAN 2.0A格式",
+        "CAN_SendMessage()": "发送CAN消息函数，参数包括ID和数据",
+        "CAN_Receive()": "接收CAN消息函数，返回消息ID和数据",
+        "error_handling": "自动重传和错误检测机制"
+      },
+      "protocols": {
+        "CANopen": "支持CANopen协议栈",
+        "J1939": "支持J1939车载通信协议"
+      }
+    },
+    "timing_control": {
+      "timer_modules": {
+        "GPT0": "系统主定时器",
+        "GPT1": "PWM输出定时器",
+        "GPT2": "事件计数定时器"
+      },
+      "GPT_Init()": "定时器初始化函数，设置定时周期和工作模式",
+      "GPT_StartTimer()": "启动定时器函数，开始计时",
+      "timer_resolution": "1μs",
+      "max_period": "65535μs"
+    },
+    "digital_io": {
+      "gpio_ports": {
+        "port_A": "通用输入输出端口A",
+        "port_B": "通用输入输出端口B",
+        "port_C": "通用输入输出端口C"
+      },
+      "IO_SetLED()": "LED控制函数，设置LED状态",
+      "IO_ReadButton()": "按钮读取函数，返回按钮状态",
+      "led_indicators": {
+        "power_led": "电源指示灯",
+        "status_led": "状态指示灯",
+        "error_led": "错误指示灯"
+      },
+      "button_inputs": {
+        "reset_button": "系统复位按钮",
+        "mode_button": "模式切换按钮"
+      }
+    }
+  },
+  "system_monitoring": {
+    "status_control": {
+      "SCS_Init()": "系统状态监控初始化函数",
+      "SCS_CheckStatus()": "系统状态检查函数，返回系统运行状态",
+      "monitoring_parameters": {
+        "cpu_usage": "CPU使用率监控",
+        "memory_usage": "内存使用率监控",
+        "temperature": "系统温度监控",
+        "voltage_levels": "电压水平监控"
+      },
+      "fault_detection": {
+        "watchdog_timer": "看门狗定时器",
+        "stack_overflow_detection": "堆栈溢出检测",
+        "communication_timeout": "通信超时检测"
+      }
+    }
+  },
+  "software_architecture": {
+    "task_scheduling": {
+      "main_loop": "主循环任务调度",
+      "interrupt_handlers": "中断服务程序",
+      "background_tasks": "后台任务处理"
+    },
+    "memory_management": {
+      "heap_size": "32KB",
+      "stack_size": "8KB",
+      "flash_memory": "512KB",
+      "ram_memory": "64KB"
+    },
+    "configuration": {
+      "compile_options": "编译选项配置",
+      "debug_settings": "调试设置",
+      "optimization_level": "优化级别设置"
+    }
+  },
+  "api_reference": {
+    "initialization_apis": {
+      "System_Init()": "系统总初始化函数",
+      "Hardware_Init()": "硬件初始化函数",
+      "Software_Init()": "软件初始化函数"
+    },
+    "runtime_apis": {
+      "Task_Execute()": "任务执行函数",
+      "Event_Handle()": "事件处理函数",
+      "Error_Report()": "错误报告函数"
+    },
+    "utility_functions": {
+      "Delay_ms()": "毫秒延时函数",
+      "Delay_us()": "微秒延时函数",
+      "Get_SystemTime()": "获取系统时间函数"
+    }
+  },
+  "performance_specifications": {
+    "timing_requirements": {
+      "response_time": "<1ms",
+      "interrupt_latency": "<10μs",
+      "task_switching_time": "<5μs"
+    },
+    "resource_usage": {
+      "cpu_utilization": "<80%",
+      "memory_utilization": "<90%",
+      "power_consumption": "<500mW"
+    }
+  }
+}

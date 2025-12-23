@@ -1,0 +1,93 @@
+{
+    "name": "46_Speech_Recognition_DeepSpeech_LibriSpeech_DL",
+    "query": "I'd like to develop a speech recognition system using the DeepSpeech library and the LibriSpeech dataset for me. Could you implement data loading and audio preprocessing, including noise reduction and normalization, in `src/data_loader.py`? Tune the hyperparameters such as learning rate and batch size in `src/train.py`. Please save the recognition results in `results/recognition_results.txt`. Next, create visualizations of the audio processing stages (like waveform and spectrogram) and save them as `results/figures/audio_visualization.png`. Generate a detailed report on recognition accuracy, error analysis, and suggestions for future improvements, and save it as `results/recognition_report.md`. Additionally, document the setup process for DeepSpeech, with tips for common installation issues, with [DeepSpeech documentation](https://deepspeech.readthedocs.io/en/r0.9/) as a reference. Save the final model in `models/saved_models/`. Thanks in advance!",
+    "tags": [
+        "Audio Processing"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "\"LibriSpeech\" dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Audio preprocessing, including noise reduction and normalization, is performed in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "Hyperparameters such as learning rate and batch size are tuned in `src/train.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                2
+            ],
+            "criteria": "Save the speech recognition model in models/saved_models/.",
+            "category": "Save Trained Model",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2
+            ],
+            "criteria": "Recognition results are saved as `results/recognition_results.txt`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "Visualizations of audio processing, like waveform and spectrogram, are generated and saved as `results/figures/audio_visualization.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                2
+            ],
+            "criteria": "A report containing recognition accuracy, error analysis, and future improvement suggestions is generated and saved as `results/recognition_report.md`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The installation process for the \"DeepSpeech\" library should be well-documented, with troubleshooting tips if the library fails to install. Refer to the [DeepSpeech documentation](https://deepspeech.readthedocs.io/en/r0.9/) for guidance.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The visualizations should clearly depict the stages of audio processing, making it easy to interpret the effects of preprocessing.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "The report should include recommendations for alternative models or approaches if the \"DeepSpeech\" library proves challenging to implement.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": true,
+    "executed_successfully": true,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

@@ -1,0 +1,94 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "step": {
+        "type": "integer",
+        "description": "The step number in the trajectory, 0-based."
+      },
+      "user_message": {
+        "type": ["string", "null"],
+        "description": "The message from the external user to the agent. If null, no message was sent."
+      },
+      "agent": {
+        "type": "object",
+        "properties": {
+          "thought": {
+            "type": "string",
+            "description": "The agent's thought at this step."
+          },
+          "action": {
+            "type": ["string", "null"],
+            "description": "The agent's action sent to the environment. If null, the agent did not take any action, for example, when the agent has finished the task."
+          },
+          "agent_name": {
+            "type": "string",
+            "description": "The name of the agent that made the action."
+          }
+        },
+        "required": ["thought", "action"],
+        "description": "Everything related to the agent at this step."
+      },
+      "environment": {
+        "type": ["string", "null"],
+        "description": "The environment's (shell, python interpreter) response to the action submitted by the agent. If null, the environment was not involved in this step."
+      },
+      "step_usage": {
+        "type": "object",
+        "properties": {
+          "input_tokens": {
+            "type": "integer",
+            "description": "The number of input tokens passed as LLM context."
+          },
+          "output_tokens": {
+            "type": "integer",
+            "description": "The number of tokens produced by the LLM."
+          },
+          "model": {
+            "type": "string",
+            "description": "The name of the LLM model used."
+          },
+          "cost": {
+            "type": "number",
+            "description": "The cost of the LLM inference, in USD."
+          },
+          "llm_inference_time": {
+            "type": "number",
+            "description": "The time taken by the LLM to generate the output tokens, in seconds."
+          },
+          "step_execution_time": {
+            "type": "number",
+            "description": "The time taken to make an entire step including LLM inference and environment execution, in seconds."
+          }
+        },
+        "required": [
+          "input_tokens",
+          "output_tokens",
+          "model",
+          "cost",
+          "llm_inference_time",
+          "step_execution_time"
+        ]
+      },
+      "accumulated_usage": {
+        "type": "object",
+        "properties": {
+          "accumulated_cost": {
+            "type": "number",
+            "description": "The total cost of the trajectory up to this step, in USD."
+          },
+          "accumulated_time": {
+            "type": "number",
+            "description": "The total time taken by the agent to complete the trajectory up to this step, in seconds."
+          }
+        },
+        "required": [
+          "accumulated_cost",
+          "accumulated_time"
+        ]
+      }
+    },
+    "required": ["step", "user_message", "agent", "environment", "step_usage", "accumulated_usage"]
+  }
+}

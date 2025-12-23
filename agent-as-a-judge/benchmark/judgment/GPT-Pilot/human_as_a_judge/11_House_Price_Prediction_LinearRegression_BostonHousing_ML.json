@@ -1,0 +1,88 @@
+{
+    "name": "11_House_Price_Prediction_LinearRegression_BostonHousing_ML",
+    "query": "Hi. Set up a house price prediction project using a Linear Regression model on the Boston Housing dataset. Load the dataset using `from datasets import load_dataset` and `ds = load_dataset(\"~/mrseba/boston_house_price\")` in `src/data_loader.py`. Ensure feature scaling and data standardization are performed in `src/data_loader.py`. Implement the Linear Regression model in `src/model.py`. Use cross-validation to evaluate the model in `src/train.py`. Print the Mean Squared Error (MSE), Mean Absolute Error (MAE), and $R^2$ score, and save them under `results/metrics/metrics.txt`. Visualize the comparison between predicted and actual values and save the result as `results/figures/`prediction_vs_actual.png`. The visualizations should clearly demonstrate the model's accuracy (which, if done right, should be good).",
+    "tags": [
+        "Financial Analysis",
+        "Regression",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Boston Housing\" dataset is utilized using `from datasets import load_dataset` and `ds = load_dataset(\"mrseba/boston_house_price\")` in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Feature scaling and data standardization are performed in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "The \"Linear Regression\" model is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "\"Cross-validation\" is used to evaluate the model in `src/train.py`.",
+            "category": "Performance Metrics",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "\"Mean Squared Error (MSE),\" \"Mean Absolute Error (MAE),\" and \"R^2 score\" are printed, and saved as `results/metrics/metrics.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The comparison of predicted vs. actual values is visualized and saved as `results/figures/prediction_vs_actual.png`.",
+            "category": "Visualization",
+            "satisfied": true
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The dataset should load smoothly using the provided `load_dataset` code, and other methods should be tried if issues arise.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The visualizations should clearly demonstrate the model's accuracy by highlighting the differences between predicted and actual values.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "hint": "`ds = load_dataset(\"~/mrseba/boston_house_price\")` in the query is wrong, and it should be `ds = load_dataset(\"mrseba/boston_house_price\")`. We leave it here to check the self-debugging skill of the agents.",
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

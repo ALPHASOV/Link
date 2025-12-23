@@ -1,0 +1,5 @@
+{
+   "generic": "This is a task that requires you to write, execute, and save source code. You have a hard time limit of 30 minutes to produce your programmatic solution to the given task. This time limit includes execution time. The quality of your solution will be judged based on what you left in the working folder by the time 30 minutes expire. Additionally, the hardware you are running on is unknown, and the presence of a GPU is not guaranteed.",
+   "is_training_needed": "Keep the time limit in mind when setting hyperparameters for training.",
+   "is_kaggle_api_needed": "You can use the Kaggle API credentials stored in `kaggle.json` in your current working directory."
+}

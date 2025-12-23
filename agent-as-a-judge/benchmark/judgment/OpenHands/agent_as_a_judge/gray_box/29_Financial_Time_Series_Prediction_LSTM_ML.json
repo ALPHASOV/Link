@@ -1,0 +1,90 @@
+{
+    "name": "29_Financial_Time_Series_Prediction_LSTM_ML",
+    "query": "Could you help me set up a financial time series prediction system using an LSTM model with some real-world Financial Analysis, like stock prices or Bitcoin prices? First, we'll need to clean the data, taking care of any missing values and outliers in `src/data_loader.py`. Then, let's convert the time series data into a supervised learning format using a time window in `src/data_loader.py`. Finally apply a LSTM model for prediction, where the LSTM model is implemented in `src/model.py`. Once you've got the predictions, save the results as `results/prediction_results.text`. Create an interactive dashboard visualizing prediction results using Dash and save the implementation in `src/dashboard.py`. Finally, I'd appreciate a Markdown document that shows the model architecture, training process, and performance analysis, saved as `results/report.md`. Make sure the system manages the start and stop of the Dash app automatically to save resources. Thanks so much!",
+    "tags": [
+        "Financial Analysis",
+        "Supervised Learning",
+        "Time Series Forecasting"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "Some real-world financial time series data (e.g., \"stock prices\" or \"Bitcoin prices\") is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data cleaning is performed, including handling missing values and outliers in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "A time window is used to convert the time series data into a supervised learning problem. Please implement this in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "An \"LSTM\" model is used for financial time series prediction and implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "Prediction results saved as `results/prediction_results.txt`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "An interactive visualization dashboard of prediction results is created using \"Dash\". The implementation is saved in `src/visualize.py`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                2,
+                3,
+                4,
+                5
+            ],
+            "criteria": "A Markdown document containing the model architecture, training process, and performance analysis is generated, and saved as `results/report.md`.",
+            "category": "Other",
+            "satisfied": true
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The \"Dash\" dashboard should allow users to interact with the prediction results, enabling exploration of different time frames and zooming into specific periods for detailed analysis.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "During development, the system should automatically manage the start and stop of the \"Dash\" application to prevent unnecessary resource usage.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

@@ -1,0 +1,82 @@
+{
+    "name": "28_Stock_Price_Prediction_LSTM_YahooFinance_ML",
+    "query": "Could you help me build a stock price prediction system using an LSTM model and the Yahoo Finance dataset? Please clean the data, including handling missing values and outliers, and use a time window to convert the time series data to a supervised learning problem. The LSTM model should be implemented in `src/model.py`, and the dataset loading, cleaning, and conversion should be implemented in `src/data_loader.py`. Save the prediction results to `results/predictions.txt` and generate and save interactive charts of the prediction results in `results/figures/prediction_interactive.html` using Plotly. Create a Jupyter Notebook with model architecture visualization, training process, and prediction results and save it as a PDF report at `results/report.pdf`.",
+    "tags": [
+        "Financial Analysis",
+        "Supervised Learning",
+        "Time Series Forecasting"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"LSTM\" model is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [],
+            "criteria": "The \"Yahoo Finance\" dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "Data cleaning, including handling missing values and outliers, is performed in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                2
+            ],
+            "criteria": "A time window is used to convert the time series data to a supervised learning problem. Please save the implementation in `src/data_loader.py.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "Prediction results are saved in `results/predictions.txt`.",
+            "category": "Other",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Interactive charts of prediction results are generated using \"Plotly\" and saved in `results/figures/prediction_interactive.html`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ],
+            "criteria": "A Jupyter Notebook containing the model architecture visualization, training process, and prediction results are created and saved as PDF report as `results/report.pdf`.",
+            "category": "Other",
+            "satisfied": false
+        }
+    ],
+    "preferences": [],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

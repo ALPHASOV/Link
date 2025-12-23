@@ -1,0 +1,97 @@
+{
+    "name": "23_Wine_Quality_Prediction_DecisionTree_WineQuality_ML",
+    "query": "Build a wine quality prediction system using a Decision Tree model with the Wine Quality dataset from UCI. Preprocess the data in `src/data_loader.py`, including handling missing values and feature scaling. Use cross-validation to evaluate the model in `src/train.py`. Implement the Decision Tree regression model in `src/model.py`.Save the mean squared error in `results/metrics/mean_squared_error.txt`. Visualize and save feature importance as `results/figures/feature_importance.png`. Create a Jupyter Notebook with results and visualizations, and summarize your observations. The Notebook should thoroughly document the preprocessing steps to ensure reproducibility. Convert the Notebook to a PDF report and save it as `results/report.pdf`. The PDF report should also include a brief discussion on potential improvements of the model.",
+    "tags": [
+        "Classification",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Wine Quality\" dataset from \"UCI\" is used.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data preprocessing is performed in `src/data_loader.py`, including handling missing values and feature scaling.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "The \"Decision Tree\" regression model is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Cross-validation is used to evaluate the model in `src/train.py`.",
+            "category": "Performance Metrics",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The Mean Squared Error (MSE) is saved in `results/metrics/mean_squared_error.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The feature importance plot is generated and saved as `results/figures/feature_importance.png`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "criteria": "A Jupyter Notebook containing  preprocessing steps, results and visualizations is generated with observations summarized. The Notebook is converted to a PDF report and saved as `results/report.pdf`.",
+            "category": "Visualization",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The feature importance plot should clearly highlight the top influential features.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The final PDF report should include a brief discussion on potential improvements of the model.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

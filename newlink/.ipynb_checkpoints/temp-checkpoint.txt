@@ -1,0 +1,8 @@
+MAIN // 系统入口与主循环，负责初始化和调度各模块 // main()、system_init()、Concurrency
+ADC // 模数转换，读取传感器模拟量并转为数字值 // ADC_Init()、ADC_Read()、ADC_RESOLUTION
+CAN // 控制器局域网通信，负责ECU间消息收发与协议处理 // CAN_Init()、CAN_Send()、process_can_device()
+GPT // 通用定时器，提供精准延时、超时和周期性事件 // GPT_Init()、GPT_SetTimer()、GPT_StartTimer()
+IO // 通用输入输出，控制GPIO、LED、按键等硬件接口 // IO_init()、IO_toggleLED()
+SCS // 系统控制策略，管理整车或子系统运行模式与状态 // （策略配置函数，文档未列出具体API）
+Type // 公共数据类型与常量定义，被所有模块引用 // （仅含宏与类型定义，无运行时函数）
+XC22xxMREGS // XC2200系列MCU寄存器映射头文件，提供底层硬件寄存器访问 // （仅含寄存器宏定义，无运行时函数）

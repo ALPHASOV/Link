@@ -1,0 +1,90 @@
+{
+    "name": "35_Loan_Default_Prediction_RandomForest_LendingClub_ML",
+    "query": "Can you help me build a loan default prediction system using a Random Forest classifier with the Lending Club Loan dataset? Start by loading the dataset, handling imbalanced data using oversampling or undersampling techniques, and performing feature selection to identify important features, all implemented in `src/data_loader.py`. Train a Random Forest model and save the trained model in `models/saved_models/`. Save the feature importances to `results/feature_importances.txt` and save the ROC curve as `results/figures/roc_curve.png` using matplotlib. Finally, create a detailed Markdown report summarizing the data preprocessing steps, model training, and evaluation process, and save it as `results/loan_default_prediction_report.md`. The report should include insights on model performance and suggestions for potential improvements.",
+    "tags": [
+        "Classification",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Lending Club Loan\" dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Imbalanced data is handled using oversampling or undersampling techniques, implemented in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Feature selection is performed to identify important features in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                2
+            ],
+            "criteria": "A \"Random Forest\" classifier is implemented for predicting loan default. Save the trained model in models/saved_models/.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "Feature importances are saved as `results/feature_importances.txt`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "The \"ROC curve\" is visualized and saved using \"matplotlib\" at `results/figures/roc_curve.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                2,
+                3,
+                5
+            ],
+            "criteria": "A Markdown report containing the data preprocessing steps, model training, and evaluation process is created and saved as `results/loan_default_prediction_report.md`.",
+            "category": "Other",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The Markdown report is detailed.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The Markdown report should include insights on model performance and suggestions for potential improvements.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

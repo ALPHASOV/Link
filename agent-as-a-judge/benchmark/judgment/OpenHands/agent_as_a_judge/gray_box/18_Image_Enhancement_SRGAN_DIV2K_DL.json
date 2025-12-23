@@ -1,0 +1,83 @@
+{
+    "name": "18_Image_Enhancement_SRGAN_DIV2K_DL",
+    "query": "I need to create a system for image enhancement using an SRGAN model (you can obtain a pre-trained SRGAN [here](https://github.com/tensorlayer/srgan)) with the DIV2K dataset, which can be downloaded from [this link](https://data.vision.ee.ethz.ch/cvl/DIV2K/). The dataset should be loaded in the `src/data_loader.py` file. The system should preprocess the images, including resizing and normalization, in `src/data_loader.py`. Use a pre-trained model saved under `models/saved_models/` to save time, and save the enhanced images to the `results/figures/` directory. Additionally, the system should visualize and save the comparison between the original and enhanced images to `results/figures/enhanced_comparison.png`. Finally, create a Markdown report with results and visualizations on a diverse set of samples to showcase the model's performance on various types of images, and save it as `results/report.md`. The report should include a detailed comparison of the model's performance on these selected samples, highlighting where the model excels or struggles.",
+    "tags": [
+        "Computer Vision",
+        "Generative Models"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"DIV2K\" dataset is loaded in the `src/data_loader.py` file.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [],
+            "criteria": "A pre-trained \"SRGAN\" model is saved under models/saved_models/.",
+            "category": "Save Trained Model",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Image preprocessing, including resizing and normalization, is implemented in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Enhanced images are saved to the specified folder `results/figures/`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The comparison of original and enhanced images is visualized and saved as `results/figures/enhanced_comparison.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "criteria": "A Markdown file containing results and visualizations is generated and saved as `results/report.md`.",
+            "category": "Visualization",
+            "satisfied": true
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "A diverse set of samples should be selected to showcase the model's performance across different types of images.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The Markdown report should include a detailed comparison of the model's performance on these selected samples, highlighting where the model excels or struggles.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": false,
+    "is_web_navigation_needed": true
+}

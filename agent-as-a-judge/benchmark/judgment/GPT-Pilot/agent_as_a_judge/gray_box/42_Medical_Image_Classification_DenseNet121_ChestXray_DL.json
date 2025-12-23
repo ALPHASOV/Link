@@ -1,0 +1,87 @@
+{
+    "name": "42_Medical_Image_Classification_DenseNet121_ChestXray_DL",
+    "query": "Create a medical image classification system using a pre-trained DenseNet-121 model and the Kaggle Chest X-ray dataset. Start by loading and preprocessing the dataset and performing data augmentation (including rotation, translation, and scaling) in `src/data_loader.py`. Apply the DenseNet-121 model for classification, recording the accuracy and saving it to `results/metrics/classification_accuracy.txt`. Fine-tune the model and save it as `models/saved_models/chest_xray_densenet_model.pth`. Use Grad-CAM to visualize the model's decision-making process and save these visualizations as `results/figures/grad_cam_visualizations.gif`. Finally, create a Markdown report that documents the model architecture, training process, data augmentation techniques, and analysis of the results, and save it as `results/medical_image_classification_report.md`. It would also be nice if the system was flexible such that the DenseNet-121 could be easily further fine-tuned by a human user.",
+    "tags": [
+        "Classification",
+        "Computer Vision",
+        "Medical Analysis",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Kaggle Chest X-ray\" dataset is used, with data loading and preprocessing implemented in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data augmentation is performed, including rotation, translation, and scaling of images in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "The pre-trained \"DenseNet-121\" model is fine-tuned saved in models/saved_models/.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                1,
+                2
+            ],
+            "criteria": "Classification accuracy is printed and saved as `results/metrics/classification_accuracy.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "\"Grad-CAM\" is used to visualize model decisions, saving the visualizations as `results/figures/grad_cam_visualizations.gif`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "A \"Markdown\" report is created containing the model architecture, training process, data augmentation, and result analysis, and saved as `results/medical_image_classification_report.md`.",
+            "category": "Other",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The \"Markdown\" report should include a section explaining the impact of data augmentation on model performance.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The \"Grad-CAM\" visualizations should clearly highlight the areas of the images that contributed most to the model's decisions.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "The system should be flexible to allow further fine-tuning of the \"DenseNet-121\" model.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": true,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

@@ -1,0 +1,113 @@
+{
+    "name": "17_Heart_Disease_Prediction_XGBoost_UCI_ML",
+    "query": "Create a project to predict heart disease using an XGBoost model with the UCI Heart Disease dataset, which can be downloaded from [this link](https://archive.ics.uci.edu/dataset/45/heart+disease). Load the dataset in `src/data_loader.py`. Implement feature selection and data standardization in `src/data_loader.py`. Use SHAP values to explain the feature importance, and save the results as `results/figures/shap_importance.png`. Implement the XGBoost model in `src/model.py`. Then, use SHAP values to explain the feature importance, and save the results as `results/shap_importance.png`. Save the ROC curve to `results/figures/roc_curve.png`. Finally, generate an HTML report containing all the results and visualizations, and save it as `results/report.html`. Ensure the SHAP visualizations clearly highlight the most impactful features. Include a performance comparison with another model, such as Logistic Regression, to validate the robustness of the XGBoost model. Save the XGBoost model under `models/saved_models/`.",
+    "tags": [
+        "Classification",
+        "Medical Analysis",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"UCI Heart Disease\" dataset is used, potentially being downloaded from [this link](https://archive.ics.uci.edu/dataset/45/heart+disease). Load the dataset in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Feature selection is implemented in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data standardization which ensures feature values are within the same range is implemented in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "The \"XGBoost\" model is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "\"SHAP\" values are used for feature importance explanation, with results saved as `results/figures/shap_importance.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The ROC curve saved as `results/figures/roc_curve.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "criteria": "An HTML report containing results and visualizations is generated, saved as `results/report.html`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 7,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "A performance comparison with another model (e.g., Logistic Regression) is included to validate the robustness of the XGBoost model.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 8,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "A XGBoost model is saved under `models/saved_models/`.",
+            "category": "Save Trained Model",
+            "satisfied": true
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The SHAP visualizations should be clear and highlight the most impactful features, making the results easy to interpret.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": true
+}

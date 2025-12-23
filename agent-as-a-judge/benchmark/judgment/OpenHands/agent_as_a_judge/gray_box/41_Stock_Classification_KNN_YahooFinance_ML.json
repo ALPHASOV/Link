@@ -1,0 +1,92 @@
+{
+    "name": "41_Stock_Classification_KNN_YahooFinance_ML",
+    "query": "Develop a stock classification system using a KNN model on the Yahoo Finance dataset. Your implementation should decide if a given stock will increase or decrease in price. Start by loading the dataset and performing feature engineering, including generating technical indicators and selecting the most relevant features in `src/data_loader.py`. Standardize the data to ensure feature values are within the same range in `src/data_loader.py`. Apply the KNN classifier to classify stocks based on the engineered features, and save the implementation in `src/model.py`. Next, save the classification results to `results/classification_results.txt`, and visualize the correlation between the technical indicators and the classification result as a heatmap using seaborn. Save the headmap as `results/figures/feature_correlation_heatmap.png`. Finally, create an interactive Jupyter Notebook under `results/` that explains the process, showcases the classification results, and will help ease future updates that introduce new data.",
+    "tags": [
+        "Classification",
+        "Financial Analysis",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Yahoo Finance\" dataset is used, including data loading and preparation in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Feature engineering is performed, including generating technical indicators and conducting feature selection in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data is standardized to ensure feature values are within the same range in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                2
+            ],
+            "criteria": "The \"KNN classifier\" is applied to classify stocks based on the engineered features. Please save the implementation in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                3
+            ],
+            "criteria": "The classification results are saved in `results/classification_results.txt`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                4
+            ],
+            "criteria": "A heatmap representing the correlations between the technical indicators and the classification results is saved as `results/figures/feature_correlation_heatmap.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                4
+            ],
+            "criteria": "An interactive \"Jupyter Notebook\" is created under `results/` to explain the process and showcase the classification results.",
+            "category": "Human Computer Interaction",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The Jupyter Notebook should include clear explanations of each step, including feature engineering and model evaluation.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The correlation heatmap should highlight the most significant technical indicators and provide insights into their relationships.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "The system should allow easy updates with new data, making the notebook flexible for future analysis.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

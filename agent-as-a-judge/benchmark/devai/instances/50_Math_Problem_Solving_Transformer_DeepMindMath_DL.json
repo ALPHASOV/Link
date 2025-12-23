@@ -1,0 +1,112 @@
+{
+    "name": "50_Math_Problem_Solving_Transformer_DeepMindMath_DL",
+    "query": "Hi! I need help with a project that uses a Transformer model to solve math problems from the DeepMind Mathematics dataset. Please load the dataset and preprocessing it in `src/data_loader.py`. The preprocessing should parse and standardize the math expressions in a syntactically consistent way so the model can easily process them. Implement the Transformer in `src/model.py`. Also, tune the hyperparameters such as the learning rate and the batch size in `src/train.py`, and save the training loss curve to `results/figures/training_loss_curve.png`. Sample and save some Transformer generated solutions in `results/sample_solutions.txt`. Using your model, create a simple interactive tool with Gradio or Streamlit in `src/interface.py` that can solve various user given math problems. Lastly, generate a report on how the model performs with different types of problems, including model accuracy, error analysis, and future improvement suggestions. Save it as `results/metrics/model_report.md`. Thanks in advance!",
+    "tags": [
+        "Natural Language Processing"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "DeepMind Mathematics dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data preprocessing is performed including parsing and standardizing mathematical expressions in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "A \"Transformer\" model is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Hyperparameters such as learning rate and batch size are tuned in `src/train.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "Model training loss curve is saved as `results/figures/training_loss_curve.png`.",
+            "category": "Visualization",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "Some Transformer generated solutions are saved in `results/sample_solutions.txt`.",
+            "category": "Other",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "An interactive tool is created allowing users to input mathematical problems and receive solutions using \"Gradio\" or \"Streamlit\" in `src/interface.py`.",
+            "category": "Human Computer Interaction",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 7,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ],
+            "criteria": "A report is generated containing model accuracy, error analysis, and future improvement suggestions, and saved as `results/metrics/model_report.md`.",
+            "category": "Other",
+            "satisfied": null
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The preprocessing step should ensure that the mathematical expressions are standardized in a way that makes them easily processed by the model.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The interactive tool should be capable of handling a wide variety of mathematical problem types.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "The report should provide insights into how the model handles different types of mathematical problems, identifying specific strengths and areas for improvement.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

@@ -1,0 +1,94 @@
+{
+    "name": "21_Iris_Classification_SVM_Iris_ML",
+    "query": "I request a project to classify iris species utilizing the Iris dataset with a Support Vector Machine (SVM) classifier implemented in `src/model.py`. The project should standardize the data in and perform feature selection in `src/data_loader.py`. It will document the classification accuracy and save it as `results/metrics/classification_accuracy.txt`, and generate and save a confusion matrix as `results/figures/confusion_matrix.png`. It will further create an interactive web application in `src/app.py` using Streamlit to showcase classification results and model performance, with the figures stored in `results/figures/`. The web page should be user-friendly, with a brief explanation of the model to help users understand how the SVM classifier works.",
+    "tags": [
+        "Classification",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Iris\" dataset is used.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data is standardized to ensure feature values are within the same range in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Feature selection is performed to identify important features in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "The \"SVM classifier\" is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "Classification accuracy is saved in `results/metrics/classification_accuracy.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "A confusion matrix is generated and saved as `results/figures/confusion_matrix.png`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                2,
+                3,
+                4,
+                5
+            ],
+            "criteria": "An interactive web application `src/app.py` is created using \"Streamlit\"` to showcase classification results and model performance in results/figures/.",
+            "category": "Human Computer Interaction",
+            "satisfied": true
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The Streamlit web page should be user-friendly, allowing users to easily explore different aspects of the model's performance.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "A brief model explanation should be included on the web page, helping users understand how the SVM classifier works.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

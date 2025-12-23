@@ -1,0 +1,77 @@
+{
+    "name": "01_Image_Classification_ResNet18_Fashion_MNIST_DL",
+    "query": "Hey! Could you help me set up a system to classify images from the Fashion-MNIST dataset using the ResNet-18 model in PyTorch? The Fashion-MNIST dataset should be loaded in `src/data_loader.py`. I'd like the system to show the training progress with the tqdm library in the training loop in `src/train.py` and to perform some data augmentation with `torchvision.transforms` (like rotation and scaling) to make the model more robust. The latter should be implemented in `src/data_loader.py` and the ResNet-18 model should be imported from PyTorch in `src/model.py`. Once the training is done, please save the trained model as `fashionnet.pt` in the `models/saved_models/` directory. It would be great if the training process could be as efficient as possible. Also, please try to write the code in an easily understandable and easily maintainable style. If you can, it would be awesome to include some insights into model interpretability too, such as by using Grad-CAM or something similar. Thanks a lot!",
+    "tags": [
+        "Classification",
+        "Computer Vision",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Fashion-MNIST\" dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data augmentation is performed using `torchvision.transforms`, including rotation, scaling, etc. The implementation is in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "The \"ResNet-18\" model is imported from \"PyTorch\" in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Training progress is displayed using the \"tqdm\" library in the main training loop in `src/train.py`.",
+            "category": "Visualization",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The trained model is saved under the file name `fashionnet.pt` in `models/saved_models/`.",
+            "category": "Save Trained Model",
+            "satisfied": null
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "Code should be written in a clear, understandable and maintainable style with appropriate comments.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The training process should be efficient.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "Insights of model interpretability should be provided, such as using techniques like Grad-CAM for visualization.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

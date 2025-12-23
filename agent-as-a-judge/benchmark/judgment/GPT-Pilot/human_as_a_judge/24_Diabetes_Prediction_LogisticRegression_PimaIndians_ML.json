@@ -1,0 +1,105 @@
+{
+    "name": "24_Diabetes_Prediction_LogisticRegression_PimaIndians_ML",
+    "query": "Set up a diabetes prediction project using a Logistic Regression model and the Pima Indians Diabetes dataset. Perform feature scaling and data standardization in `src/data_loader.py`. Use cross-validation to evaluate the model in `src/train.py`, and save the accuracy score to `results/metrics/accuracy_score.txt`. Generate and save the ROC curve to `results/figures/roc_curve.png`. Create an interactive dashboard using Tableau or Power BI to showcase the model's performance and highlight important features. Ensure the dashboard is user-friendly and document the dataset processing and visualization creation steps. During development, the system should automatically manage the opening and closing of Tableau or Power BI to prevent unnecessary blocking.",
+    "tags": [
+        "Classification",
+        "Medical Analysis",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Pima Indians Diabetes\" dataset is used.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Feature scaling and data standardization are implemented in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "A \"Logistic Regression\" model is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Cross-validation is used to evaluate the model in `src/train.py`.",
+            "category": "Performance Metrics",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "The accuracy score is saved in `results/metrics/accuracy_score.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "The ROC curve is generated and saved as `results/figures/roc_curve.png`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "criteria": "An interactive visualization dashboard using \"Tableau\" or \"Power BI\" is created to showcase model performance and important features. ",
+            "category": "Visualization",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The dashboard should allow users to explore different aspects of the model's performance and understand which features contribute most to predictions.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The dashboard should clearly show how the dataset was processed and how the visualizations were created.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "During development, the system should automatically open and close \"Tableau\" or \"Power BI\" as needed to avoid long periods of blocking or inactivity.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

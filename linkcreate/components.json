@@ -1,0 +1,34 @@
+{
+  "components": [
+    {
+      "name": "MAIN",
+      "function": "系统入口，初始化各模块",
+      "keywords": ["main()", "system_config()", "初始化", "系统启动", "模块初始化"]
+    },
+    {
+      "name": "ADC",
+      "function": "读取模拟信号",
+      "keywords": ["ADC_Init()", "ADC_Read(channel)", "模拟转换", "信号采集", "ADC", "模拟信号"]
+    },
+    {
+      "name": "CAN",
+      "function": "发送/接收CAN消息",
+      "keywords": ["CAN_SendMessage()", "CAN_Receive()", "总线通信", "消息传输", "CAN", "通信协议"]
+    },
+    {
+      "name": "GPT",
+      "function": "定时器管理",
+      "keywords": ["GPT_Init()", "GPT_StartTimer()", "定时控制", "时间管理", "定时器", "计时"]
+    },
+    {
+      "name": "IO",
+      "function": "控制外设",
+      "keywords": ["IO_SetLED()", "IO_ReadButton()", "GPIO控制", "外设接口", "输入输出", "LED", "按钮"]
+    },
+    {
+      "name": "SCS",
+      "function": "系统状态监控",
+      "keywords": ["SCS_CheckStatus()", "SCS_Init()", "状态检测", "系统监控", "状态管理", "监控"]
+    }
+  ]
+}

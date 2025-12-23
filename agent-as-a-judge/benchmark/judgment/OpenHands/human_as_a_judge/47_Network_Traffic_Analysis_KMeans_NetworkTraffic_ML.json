@@ -1,0 +1,93 @@
+{
+    "name": "47_Network_Traffic_Analysis_KMeans_NetworkTraffic_ML",
+    "query": "Develop a network traffic analysis system using the K-means clustering algorithm with the Network Intrusion dataset (CIC-IDS-2017) from Kaggle. Load the dataset and standardize the data to ensure feature values are within the same range in `src/data_loader.py`. Implement the K-means clustering algorithm in `src/model.py`. Evaluate the clusters using the silhouette coefficient and save the evaluation results under `results/metrics/`. Save the clustering results as `results/clustering_results.txt`. Visualize the clustering outcomes and save the visuals as `results/figures/network_traffic_visualization.png`. Create an interactive dashboard with Dash or Bokeh to explore the clustering results, and save the dashboard under `results/`. Ensure the system is modular so that a user could quickly change the clustering algorithm.",
+    "tags": [
+        "Unsupervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "\"Network Intrusion dataset (CIC-IDS-2017)\" from Kaggle is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data is standardized to ensure feature values are within the same range in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "\"K-means\" clustering algorithm is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                1,
+                2
+            ],
+            "criteria": "The \"silhouette coefficient\" is used for evaluation. The evaluation results are saved under `results/metrics/`.",
+            "category": "Performance Metrics",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                1,
+                2
+            ],
+            "criteria": "Clustering results are printed and saved as `results/clustering_results.txt`.",
+            "category": "Other",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                4
+            ],
+            "criteria": "Network traffic clustering is visualized and saved as `results/figures/network_traffic_visualization.png`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                4
+            ],
+            "criteria": "An interactive dashboard using \"Dash\" or \"Bokeh\" is created to showcase clustering results and saved under `results/`.",
+            "category": "Visualization",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The dashboard should allow users to filter and drill down into specific clusters for detailed analysis.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "Visualizations should clearly distinguish between different clusters, making it easy to identify patterns in the network traffic data.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "The project should be modular, allowing a user to easily swap the clustering algorithm.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": true,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": true,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

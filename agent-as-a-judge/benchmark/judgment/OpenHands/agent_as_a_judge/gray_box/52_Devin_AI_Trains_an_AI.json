@@ -1,0 +1,75 @@
+{
+    "name": "52_Devin_AI_Trains_an_AI",
+    "query": "Can you finetune a 7B LLaMA model using `https://github.com/artidoro/qlora`? Follow the instructions in the repository to finetune the 7B LLaMA model and save it in models/saved_models/. Ensure the necessary environment and dependencies are set up as outlined in `src/env.py`. Download and prepare the datasets required for finetuning the model as specified in `src/data_loader.py`. Complete the finetuning process, ensuring all configurations are properly set in accordance with qlora. Save the finetuned model and training summary, storing them in the specified directory as results/metrics/finetuning_summary.txt.",
+    "tags": [
+        "Generative Models",
+        "Natural Language Processing"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The instructions in the repository at `https://github.com/artidoro/qlora` are followed to finetune a \"7B LLaMA\" model and save it in models/saved_models/.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "The necessary environment and dependencies are set up as outlined in the repository `src/env.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "The datasets required for finetuning the model are downloaded and prepared in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "The finetuning process is completed, ensuring all configurations are properly set in accordance with \"qlora.\"",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The finetuned model and training summary are saved, storing them in the specified directory as `results/metrics/finetuning_summary.txt`.",
+            "category": "Save Trained Model",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The finetuning process should include validation steps to monitor overfitting or other issues.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "A detailed report on the finetuning process, including any challenges faced and how they were overcome, should be generated and saved as `results/finetuning_summary.txt`.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": true,
+    "resource": "https://www.cognition.ai/blog/introducing-devin"
+}

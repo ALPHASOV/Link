@@ -1,0 +1,87 @@
+{
+    "name": "31_Cancer_Prediction_SVM_BreastCancer_ML",
+    "query": "Could you help me create a project for breast cancer prediction using an SVM model with the Breast Cancer Wisconsin dataset? Load the dataset and perform feature selection to identify important features in `src/data_loader.py`. Implement the SVM classifier for cancer prediction in `src/model.py`. Use cross-validation to evaluate the model in `src/train.py`. Save the confusion matrix as `results/figures/confusion_matrix.png`. Put together a detailed report that documents the entire process-from data preprocessing to model training and evaluation. The report should cover the feature selection process and include a clear heatmap of the performance metrics. Save the report as `results/metrics/breast_cancer_prediction_report.pdf`.",
+    "tags": [
+        "Classification",
+        "Medical Analysis",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Breast Cancer Wisconsin\" dataset is used.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Feature selection is performed to identify important features in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "The \"SVM classifier\" is used for cancer prediction and should be implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                1,
+                2
+            ],
+            "criteria": "Cross-validation is used to evaluate the model in `src/train.py`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "The confusion matrix is printed and saved as `results/figures/confusion_matrix.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "criteria": "A detailed report containing the data preprocessing, model training, and evaluation process is created and saved as `results/metrics/breast_cancer_prediction_report.pdf`.",
+            "category": "Other",
+            "satisfied": true
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The feature selection process should be well-documented in the report, explaining why certain features were chosen.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The heatmap should clearly distinguish between different performance metrics, such as precision, recall, and F1-score.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "The report should include a discussion on the model's performance and potential areas for improvement.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

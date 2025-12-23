@@ -1,0 +1,74 @@
+{
+    "name": "53_Devin_Upwork_Side_Hustle",
+    "query": "Hello, I am looking to make inferences with the models in this repository `https://github.com/mahdi65/roadDamageDetection2020`. The system should perform inferences using the models from the repository and save the results in `models/saved_models/`. Sample data should be downloaded and prepared for testing the models in `src/data_loader.py`. Inference should be performed using the provided models on the sample data in `models/saved_models/`. Visualized images showing the detections made by the models should be generated and saved in the `results/figures/` directory. Also, a performance report based on the model's detection results should be generated and saved as `results/metrics/model_performance_report.txt`.",
+    "tags": [
+        "Computer Vision"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The repository at `https://github.com/mahdi65/roadDamageDetection2020` is set up.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Sample data is downloaded and prepared for testing the models in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "Inference is performed using the provided models on the sample data in `models/saved_models/`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Visualized images showing the detections made by the models are generated and saved in the `results/figures/` directory.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "A performance report based on the model's detection results is generated and saved as `results/metrics/model_performance_report.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The visualized images should be clear, with detections accurately highlighted for easy interpretation.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The performance report should include a summary of detection accuracy and any issues encountered during inference.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": false,
+    "is_web_navigation_needed": true,
+    "resource": "https://www.cognition.ai/blog/introducing-devin"
+}

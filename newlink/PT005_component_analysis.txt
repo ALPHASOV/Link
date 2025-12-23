@@ -1,0 +1,6 @@
+ADC数据采集模块 // 负责模拟信号的数字化转换和多通道数据采集 // ADC_Init,ADC_Config,ADC_StartConversion,ADC_ReadValue,ADC_Calibrate
+CAN总线通信 // 实现航天器内部子系统间的高可靠性数字通信 // CAN_Init,CAN_SendMessage,CAN_ReceiveMessage,CAN_SetFilter,CAN_ErrorHandler
+GPT定时器管理 // 提供精确的时间管理和定时功能，支持航天任务的实时性要求 // GPT_Init,GPT_StartTimer,GPT_StopTimer,GPT_ResetTimer,GPT_GetTime
+IO端口控制 // 管理输入输出端口，支持传感器和执行器的数据交换 // IO_Init,IO_SetDirection,IO_Write,IO_Read
+MAIN控制逻辑 // 系统启动和主控逻辑，协调各模块的工作以确保系统整体性能 // MAIN_Init,MAIN_Start,MAIN_Stop,MAIN_Reset
+SCS系统配置 // 系统级配置和状态管理，确保系统按预定参数运行 // SCS_Init,SCS_SetMode,SCS_GetStatus,SCS_UpdateConfig

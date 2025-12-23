@@ -1,0 +1,15 @@
+codecov:
+  notify:
+    wait_for_ci: true
+
+coverage:
+  status:
+    patch:
+      default:
+        threshold: 100% 
+    project:
+      default:
+        threshold: 5%
+comment: false
+github_checks:
+    annotations: false

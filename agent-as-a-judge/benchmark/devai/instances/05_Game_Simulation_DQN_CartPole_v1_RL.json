@@ -1,0 +1,68 @@
+{
+    "name": "05_Game_Simulation_DQN_CartPole_v1_RL",
+    "query": "Create a reliable system to train a DQN agent using PyTorch in an OpenAI Gym environment such as CartPole-v1. Implement DQN using PyTorch in `src/model.py`. The environment should be instantiated in the main file, `src/main.py`. Handle any dimension mismatches between DQN and the environment (like would happen if the Gym environment ID were changed) by logging an error. Also please log the return after each episode to `results/metrics/` and update it after each new episode finishes. Save the final return over episode curve as `results/figures/return_over_time.png` and the final trained model as `models/saved_models/dqn_model.pt`. If possible, add annotations to the return over episode curve to showcase key milestones.",
+    "tags": [
+        "Reinforcement Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"DQN\" algorithm is implemented using PyTorch and saved in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [],
+            "criteria": "An \"OpenAI Gym\" environment is instantiated in `src/main.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "The return over time curve is plotted, recording the return of each episode, and saved as `results/figures/reward_over_time.png`.",
+            "category": "Visualization",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "The trained model is saved as `models/saved_models/dqn_model.pt`.",
+            "category": "Save Trained Model",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "The return for each episode is logged to `results/metrics/` and updated after each episode finishes.",
+            "category": "Performance Metrics",
+            "satisfied": null
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The system should handle dimension mismatches, logging the issues for easy debugging.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The return over episode curve has key milestones annotated.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

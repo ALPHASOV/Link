@@ -1,0 +1,86 @@
+{
+    "name": "44_Text_Classification_BERT_AGNews_DL",
+    "query": "Hey! Could you help me build a text classification system using a pretrained BERT model on the AG News dataset? Start by loading and preprocessing the data in `src/data_loader.py` (including removing whatever noise you can and performing tokenization). Once that's done, please save the BERT model parameters under `models/saved_models/`. Apply the BERT model and save the classification results to `results/results.txt`. Also, visualize the confusion matrix using seaborn and save it as `results/figures/confusion_matrix.png`. Finally, create an interactive Jupyter Notebook to display the input texts alongside their classification results under `results/`. It would be great if the notebook explained how transfer learning was used and its impact on the model's performance. Likewise, it would be good if your implementation is straightforward to swap out the dataset, including the code to retrain BERT. Thanks a bunch!",
+    "tags": [
+        "Classification",
+        "Natural Language Processing",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"AG News\" dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data preprocessing is performed in `src/data_loader.py`, including noise removal and tokenization.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "The \"BERT\" model is applied for text classification and the parameters are saved under models/saved_models/.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                2
+            ],
+            "criteria": "The classification results are saved as `results/results.txt`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2
+            ],
+            "criteria": "The confusion matrix of classification result is visualized using \"seaborn,\" and saved as `results/figures/confusion_matrix.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                3
+            ],
+            "criteria": "An interactive \"Jupyter Notebook\" is created to display input texts and their classification results under `results`.",
+            "category": "Human Computer Interaction",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The Jupyter Notebook should explain how transfer learning was applied and its impact on model performance.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The confusion matrix visualization should clearly differentiate between correctly and incorrectly classified samples.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 2,
+            "criteria": "The system should allow for easy retraining of the \"BERT\" model with new data.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

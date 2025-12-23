@@ -1,0 +1,73 @@
+{
+    "name": "03_Text_Classification_NaiveBayes_20Newsgroups_ML",
+    "query": "Please implement a Naive Bayes classifier for the 20 Newsgroups dataset and save it in a file called `src/model.py`. The dataset should loaded in `src/data_loader.py`. The program should handle data preprocessing, including removing stop words, punctuation, and special characters. Show the improvement of your classifier by generating word clouds before and after training your classifier and saving them as `results/figures/wordcloud_before.png` and `results/figures/wordcloud_after.png`. Please calculate and include TF-IDF features when loading the data in `src/data_loader.py`. Lastly, print out a performance report (including precision, recall, and F1-score) and save it as `results/metrics/performance.txt`. The model should be straightforward to interpret, and the final report should be structured clearly for easy review.",
+    "tags": [
+        "Classification",
+        "Natural Language Processing",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"20 Newsgroups\" dataset is used in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data preprocessing is performed, including removing stop words, punctuation, and special characters. Word clouds are visualized before and after training the classifier, and saved as `results/figures/wordcloud_before.png` and `results/figures/wordcloud_after.png`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "\"TF-IDF\" features are used when loading the data in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "A \"Naive Bayes classifier\" is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "A performance report, including \"precision,\" \"recall,\" and the \"F1-score,\" is printed and saved as `results/metrics/performance.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The model should be straightforward to interpret.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The final report should be structured clearly for easy review.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": true,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

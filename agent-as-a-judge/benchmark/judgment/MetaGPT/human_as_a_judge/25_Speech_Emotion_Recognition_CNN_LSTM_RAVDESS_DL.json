@@ -1,0 +1,92 @@
+{
+    "name": "25_Speech_Emotion_Recognition_CNN_LSTM_RAVDESS_DL",
+    "query": "I am seeking a speech emotion recognition project using a CNN-LSTM model with the RAVDESS dataset, which should be downloaded from Kaggle or [this Hugging Face link](https://huggingface.co/datasets/xbgoose/ravdess). The project should load the dataset and perform robust audio preprocessing (noise removal and normalization) and MFCC feature extraction, implemented in `src/data_loader.py`. The CNN-LSTM model should be implemented in 'src/model.py'. Recognition accuracy should be saved in `results/metrics/recognition_accuracy.txt`, and a confusion matrix should be generated and saved as `results/figures/confusion_matrix.png`. Additionally, a user-friendly local API should be created using Flask to allow users to upload audio files and receive emotion recognition results, with the implementation included in `src/hci.py`.",
+    "tags": [
+        "Audio Processing",
+        "Classification"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"RAVDESS\" dataset is loaded in `src/data_loader.py`, which is downloaded from Kaggle or [this Hugging Face link](https://huggingface.co/datasets/xbgoose/ravdess).",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Audio preprocessing, including noise removal and normalization, is implemented in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "MFCC feature extraction is implemented in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "The \"CNN-LSTM\" model is implemented in 'src/model.py'.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "Recognition accuracy is saved in `results/metrics/recognition_accuracy.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                2,
+                3,
+                4
+            ],
+            "criteria": "The confusion matrix is generated and saved as `results/figures/confusion_matrix.png`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "A local API is created using \"Flask\" to allow users to upload audio files and receive emotion recognition results. The implementation should be included in `src/hci.py`.",
+            "category": "Human Computer Interaction",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The audio preprocessing step should be robust, effectively reducing noise while preserving the integrity of the speech signals.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The local API should be user-friendly, with clear instructions for uploading files and interpreting results.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": true,
+    "is_training_needed": true,
+    "is_web_navigation_needed": true,
+    "executed_successfully": false,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}

@@ -1,0 +1,82 @@
+{
+    "name": "15_Image_Captioning_ShowAndTell_Flickr8k_DL",
+    "query": "This is my current PyTorch project: Develop an automatic image captioning system using the Show and Tell model. Here I found a repo can guide you: https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Image-Captioning. Use the dataset Flickr8k dataset, downloading it from [this link](https://huggingface.co/datasets/jxie/flickr8k) and load it in `src/data_loader.py`. The system should generate descriptions of sample images and save them to `results/metrics/generated_descriptions.txt`. An attention mechanism must be implemented in `src/model.py`. Save the pre-trained model as `models/saved_models/show_and_tell_model.pt`. Visualize the attention weights and save it to `results/figures/attention_weights.png`. The dataset should load smoothly, with proper error handling if any issues arise. Ideally, the attention mechanism should clearly highlight the image regions that are most influential in generating captions.",
+    "tags": [
+        "Computer Vision",
+        "Natural Language Processing"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The pre-trained \"Show and Tell\" model is used.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [],
+            "criteria": "The \"Flickr8k\" dataset, potentially downloaded from [this link](https://huggingface.co/datasets/jxie/flickr8k), is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "The attention mechanism is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Generated descriptions of sample images are saved in `results/metrics/generated_descriptions.txt`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "The trained model is saved as `models/saved_models/show_and_tell_model.pt`.",
+            "category": "Save Trained Model",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "A visualization of attention weights is saved as `results/figures/attention_weights.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The dataset should load smoothly, with clear error handling if any issues arise during download.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The attention mechanism should clearly highlight the image regions that contribute most to the generated captions.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": true
+}

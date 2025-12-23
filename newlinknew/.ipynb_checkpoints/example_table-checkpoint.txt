@@ -1,0 +1,6 @@
+MAIN//系统入口，初始化各模块//main()、system_config()
+ADC//读取模拟信号//ADC_Init()、ADC_Read(channel)
+CAN//发送/接收CAN消息//CAN_SendMessage()、CAN_Receive()
+GPT//定时器管理//GPT_Init()、GPT_StartTimer()
+IO//控制外设//IO_SetLED()、IO_ReadButton()
+SCS//系统状态监控//SCS_CheckStatus()、SCS_Init()

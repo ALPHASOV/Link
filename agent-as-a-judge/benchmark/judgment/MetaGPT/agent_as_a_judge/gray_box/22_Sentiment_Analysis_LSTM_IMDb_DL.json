@@ -1,0 +1,88 @@
+{
+    "name": "22_Sentiment_Analysis_LSTM_IMDb_DL",
+    "query": "Could you help me set up a sentiment analysis project using an LSTM model and the IMDb dataset? Please implement data cleaning in `src/data_loader.py`, including the removal of stop words and punctuation. Use word embeddings to convert the text to a numerical format and save these embeddings under `models/saved_models/`. Then use these embeddings as input of an LSTM model, which should be implemented in `src/model.py`. Save the classification report to `results/metrics/classification_report.txt`. Create a Jupyter Notebook saved as `results/report.ipynb` with the model architecture and training process visualized. Also, save the training loss and accuracy curves to `results/figures/training_curves.png`. Pre-trained embeddings (e.g., Word2Vec or GloVe) are preferred to enhance model performance.",
+    "tags": [
+        "Natural Language Processing",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"IMDb\" movie reviews dataset is used.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data cleaning is implemented  in `src/data_loader.py`, including the removal of stop words and punctuation.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "Word embeddings are used to convert text to numerical format and saved under `models/saved_models/`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "An \"LSTM\" model is used for sentiment analysis and should be implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "A classification report is saved as `results/metrics/classification_report.txt`.",
+            "category": "Performance Metrics",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "A Jupyter Notebook containing the model architecture and training process visualization is generated and saved as `results/report.ipynb`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                2,
+                3
+            ],
+            "criteria": "Training loss and accuracy curves are generated and saved as `results/figures/training_curves.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The word embeddings should be pre-trained (e.g., Word2Vec or GloVe) to leverage existing semantic knowledge.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The Jupyter Notebook should be well-documented, making it easy for others to understand the model architecture and training process.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

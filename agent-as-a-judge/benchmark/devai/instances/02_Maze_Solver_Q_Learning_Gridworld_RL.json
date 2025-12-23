@@ -1,0 +1,69 @@
+{
+    "name": "02_Maze_Solver_Q_Learning_Gridworld_RL",
+    "query": "Can you help me create a system to solve maze-style Gridworld tasks using the Q-learning algorithm? The system should use numpy to make the core calculations more efficient and matplotlib for visualizations. The Q-learning algorithm should be implemented in `src/train.py`, and the aptly-named Gridworld environment should be implemented in `src/env.py` in such a way that one could specific the grid size and start/end positions when instantiating it. The system needs to record the learning curve during training, tracking episodes and their corresponding returns, and save it as `results/figures/learning_curve.png`. Additionally, I'd like you to visualize and save the paths taken by the agent in each episode in a file called `results/figures/path_changes.gif`, and save the trained model as `models/saved_models/q_learning_model.npy`. It would be great to have some form of real-time feedback during training, like seeing the progress or getting updates on how the model is learning. Also, if you can, please try and write the code in a way that's easy to modify or extend later on.",
+    "tags": [
+        "Reinforcement Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Q-learning\" algorithm is used in `src/train.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [],
+            "criteria": "The \"Gridworld\" environment is defined in `src/env.py` with the ability for a user to specify a grid size and start/end positions.",
+            "category": "Dataset or Environment",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "Learning curves are recorded during training, and saved as `results/figures/learning_curve.png`. Episodes and returns are recorded.",
+            "category": "Visualization",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "The learned model is saved as `models/saved_models/q_learning_model.npy`.",
+            "category": "Save Trained Model",
+            "satisfied": null
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "Paths taken during learning are visualized and saved as `results/figures/path_changes.gif`.",
+            "category": "Visualization",
+            "satisfied": null
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "Some real-time progress or feedback during the training process should be displayed.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The code should be written in a way that's easy to modify or extend later on.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

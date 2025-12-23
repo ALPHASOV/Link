@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ documentation.repo_name }} Documentation</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@9.1.5/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/json.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        docusaurus: {
+                            50: '#FFF9EB',
+                            100: '#FFF3D6',
+                            200: '#FFE7AD',
+                            300: '#FFDB85',
+                            400: '#FFD05C',
+                            500: '#FFCB45',
+                            600: '#E6B53E',
+                            700: '#CC9F36',
+                            800: '#B38A2F',
+                            900: '#997427',
+                        },
+                        sidebar: {
+                            bg: '#F9F9F9',
+                            hover: '#F2F2F2',
+                            active: '#FFFBF2',
+                        },
+                        text: {
+                            primary: '#606770',
+                            secondary: '#8B949E',
+                            heading: '#444950',
+                            link: '#3578e5',
+                        },
+                        code: {
+                            bg: '#F6F8FA',
+                            text: '#6B7280',
+                        },
+                        border: '#E5E7EB',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FFFDF6;
+            font-size: 13px;
+        }
+
+        main {
+            max-width: 1000px;
+            padding: 1.5rem 2rem;
+        }
+        
+        .code-block-container {
+            margin: 1rem 0;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            max-width: 100%;
+        }
+        
+        .code-block-title {
+            display: flex;
+            padding: 8px 15px;
+            background-color: #e9ecef;
+            border-bottom: 1px solid #dee2e6;
+            font-family: 'SF Mono', 'Roboto Mono', monospace;
+            font-size: 0.85rem;
+            color: #495057;
+        }
+        
+        .standalone-code-block {
+            font-family: 'SF Mono', 'Roboto Mono', monospace;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 15px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            position: relative;
+        }
+        
+        .code-language {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #e9ecef;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            border-bottom-left-radius: 4px;
+            text-transform: uppercase;
+            color: #495057;
+        }
+        
+        .copy-button {
+            padding: 0.2rem 0.5rem;
+            background: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: #495057;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .copy-button:hover {
+            background: #dee2e6;
+        }
+        
+        .code-block-container pre {
+            margin: 0;
+            padding: 15px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            background-color: #f8f9fa;
+        }
+        
+        .code-block-container pre::before {
+            display: none;
+        }
+        
+        .code-block-container code {
+            font-family: 'SF Mono', 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+            padding: 0.1rem 0.3rem;
+            background-color: #f1f3f5;
+            border-radius: 3px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 1.8rem;
+            height: 1.8rem;
+            background-color: #495057;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 1.8rem;
+            margin-right: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .deployment-steps {
+            margin: 1.5rem 0;
+        }
+        
+        .deployment-step {
+            margin-bottom: 1.5rem;
+        }
+        
+        .deployment-step-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .component-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            margin-bottom: 1.25rem;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .component-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background-color: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .component-header h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #4b5563;
+        }
+        
+        .component-body {
+            padding: 1rem;
+        }
+        
+        .component-section {
+            margin-bottom: 0.75rem;
+        }
+        
+        .component-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: #4b5563;
+            font-size: 0.9rem;
+        }
+        
+        .section-content {
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .compact-table {
+            width: 100%;
+            margin: 0.5rem 0;
+            font-size: 0.8rem;
+        }
+        
+        .compact-table th {
+            padding: 0.5rem 0.75rem;
+            text-align: left;
+            background-color: #f9fafb;
+        }
+        
+        .compact-table td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        
+        .two-column-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b8bcbf;
+        }
+
+        .mermaid {
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            margin: 1.5rem 0;
+        }
+        
+        .mermaid-container {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            background-color: white;
+        }
+        
+        .mermaid-header {
+            padding: 0.75rem 1rem;
+            background-color: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+            font-weight: 600;
+            color: #4b5563;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mermaid-body {
+            padding: 1rem;
+        }
+        
+        .mermaid-diagram {
+            background-color: #fafafa;
+            border-radius: 6px;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        
+        .flow-steps {
+            margin: 2rem 0;
+        }
+        
+        .flow-step {
+            display: flex;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .flow-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 1.8rem;
+            left: 0.9rem;
+            height: calc(100% + 0.75rem);
+            width: 2px;
+            background-color: #e5e7eb;
+            z-index: 0;
+        }
+        
+        .flow-step-number {
+            flex-shrink: 0;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 50%;
+            background-color: #ffcb45;
+            color: #fff;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .flow-step-content {
+            flex-grow: 1;
+            padding-bottom: 0.5rem;
+        }
+        
+        .flow-step-title {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .flow-step-description {
+            color: #6b7280;
+            margin-bottom: 0.75rem;
+        }
+
+        pre {
+            background-color: #282c34;
+            border-radius: 6px;
+            margin: 1rem 0;
+            padding: 0;
+            overflow-x: auto;
+            border: 1px solid #383c44;
+            position: relative;
+        }
+
+        pre code {
+            font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace';
+            font-size: 0.8125rem;
+            line-height: 1.6;
+            padding: 1rem !important;
+            border-radius: 6px;
+            display: block;
+            overflow-x: auto;
+            color: #abb2bf;
+        }
+
+        pre::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #ffcb45, #ffe7ad);
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            z-index: 10;
+        }
+
+        pre::after {
+            content: attr(data-language);
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #8b949e;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            text-transform: uppercase;
+            border-radius: 0 6px 0 6px;
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index: 5;
+        }
+
+        code:not(pre code) {
+            background-color: rgba(255, 203, 69, 0.1);
+            border-radius: 3px;
+            font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace';
+            font-size: 85%;
+            padding: 0.2em 0.4em;
+            color: #d97706;
+        }
+
+        table {
+            width: 100%;
+            margin: 1rem 0;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            font-size: 0.8125rem;
+        }
+
+        th {
+            background-color: #f9fafb;
+            color: #374151;
+            font-weight: 600;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            color: #4b5563;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .collapsible.expanded .collapsible-content {
+            max-height: 1000px;
+        }
+
+        .collapsible-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible.expanded .collapsible-icon {
+            transform: rotate(90deg);
+        }
+        
+        .markdown-content h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #374151;
+        }
+        
+        .markdown-content h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #374151;
+        }
+        
+        .markdown-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: #374151;
+        }
+        
+        .markdown-content p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .markdown-content ul, .markdown-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .markdown-content li {
+            margin-bottom: 0.25rem;
+        }
+        
+        .markdown-content a {
+            color: #3578e5;
+            text-decoration: none;
+        }
+        
+        .markdown-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .markdown-content blockquote {
+            border-left: 4px solid #e5e7eb;
+            padding-left: 1rem;
+            font-style: italic;
+            margin: 1rem 0;
+            color: #6b7280;
+        }
+        
+        .source-reference {
+            display: inline-flex;
+            align-items: center;
+            background: #f3f4f6;
+            border-radius: 4px;
+            padding: 0.25rem 0.5rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+            color: #4b5563;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .source-reference:hover {
+            background: #e5e7eb;
+        }
+        
+        .source-icon {
+            margin-right: 0.25rem;
+            width: 0.875rem;
+            height: 0.875rem;
+        }
+        
+        .sidebar-nav-item {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+
+        .example-card {
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        
+        .example-header {
+            background-color: #f8f9fa;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .example-title {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #212529;
+        }
+        
+        .example-body {
+            padding: 15px;
+        }
+        
+        .example-description {
+            margin-bottom: 15px;
+            color: #495057;
+        }
+
+        .source-link {
+            color: #3578e5;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .source-link:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="font-sans text-text-primary">
+    <div class="flex min-h-screen p-4">
+        <nav class="w-72 fixed inset-y-4 bg-sidebar-bg shadow-sm border-r border-border overflow-y-auto rounded-lg flex flex-col" style="left: 16px; height: calc(100vh - 32px);">
+            <div class="px-4 py-6">
+                <div class="text-xl text-text-heading text-center font-bold mb-4">{% if documentation.org_name %}{{ documentation.org_name }}/{% endif %}{{ documentation.repo_name }}</div>
+                <div class="mt-2 text-xs text-text-secondary text-center">Last indexed: {{ documentation.last_indexed|default('Not available') }}</div>
+            </div>
+            
+            <ul class="space-y-1 px-2 flex-grow">
+                <li>
+                    <a href="#overview" class="sidebar-nav-item block py-1.5 px-3 rounded-md text-sm hover:bg-sidebar-hover hover:text-text-heading transition-colors nav-link">Overview</a>
+                </li>
+                <li>
+                    <a href="#architecture" class="sidebar-nav-item block py-1.5 px-3 rounded-md text-sm hover:bg-sidebar-hover hover:text-text-heading transition-colors nav-link">Architecture</a>
+                    {% if documentation.architecture_sections %}
+                    <div class="ml-4 mt-1 space-y-1">
+                        {% for section in documentation.architecture_sections %}
+                        <a href="#{{ section.id }}" class="sidebar-nav-item block py-1 px-3 rounded-md text-xs text-text-secondary hover:bg-sidebar-hover hover:text-text-heading transition-colors nav-link">{{ section.title }}</a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </li>
+                <li>
+                    <a href="#core-components" class="sidebar-nav-item block py-1.5 px-3 rounded-md text-sm hover:bg-sidebar-hover hover:text-text-heading transition-colors nav-link">Core Components</a>
+                    {% if documentation.components %}
+                    <div class="ml-4 mt-1 space-y-1">
+                        {% for component_name in documentation.components %}
+                        <a href="#component-{{ component_name|lower|replace(' ', '-') }}" class="sidebar-nav-item block py-1 px-3 rounded-md text-xs text-text-secondary hover:bg-sidebar-hover hover:text-text-heading transition-colors nav-link">{{ component_name }}</a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </li>
+                <li>
+                    <a href="#usage" class="sidebar-nav-item block py-1.5 px-3 rounded-md text-sm hover:bg-sidebar-hover hover:text-text-heading transition-colors nav-link">Using {{ documentation.repo_name }}</a>
+                </li>
+                <li>
+                    <a href="#installation" class="sidebar-nav-item block py-1.5 px-3 rounded-md text-sm hover:bg-sidebar-hover hover:text-text-heading transition-colors nav-link">Installation & Setup</a>
+                </li>
+                {% if documentation.parameters %}
+                <li>
+                    <a href="#parameters" class="sidebar-nav-item block py-1.5 px-3 rounded-md text-sm hover:bg-sidebar-hover hover:text-text-heading transition-colors nav-link">Parameters</a>
+                </li>
+                {% endif %}
+                {% if documentation.development %}
+                <li>
+                    <a href="#development" class="sidebar-nav-item block py-1.5 px-3 rounded-md text-sm hover:bg-sidebar-hover hover:text-text-heading transition-colors nav-link">Development Guide</a>
+                </li>
+                {% endif %}
+                {% if documentation.advanced_topics %}
+                <li>
+                    <a href="#advanced-topics" class="sidebar-nav-item block py-1.5 px-3 rounded-md text-sm hover:bg-sidebar-hover hover:text-text-heading transition-colors nav-link">Advanced Topics</a>
+                    {% if documentation.advanced_topics_sections %}
+                    <div class="ml-4 mt-1 space-y-1">
+                        {% for section in documentation.advanced_topics_sections %}
+                        <a href="#{{ section.id }}" class="sidebar-nav-item block py-1 px-3 rounded-md text-xs text-text-secondary hover:bg-sidebar-hover hover:text-text-heading transition-colors nav-link">{{ section.title }}</a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </li>
+                {% endif %}
+                {% if documentation.examples %}
+                <li>
+                    <a href="#examples" class="sidebar-nav-item block py-1.5 px-3 rounded-md text-sm hover:bg-sidebar-hover hover:text-text-heading transition-colors nav-link">Examples & Tutorials</a>
+                </li>
+                {% endif %}
+            </ul>
+            
+            <div class="px-4 py-6 mt-auto border-t border-gray-200">
+                <div class="flex items-center">
+                    <img src="https://github.com/metauto-ai/agent-as-a-judge/blob/main/assets/devai_logo.png?raw=true" alt="DevAI Logo" class="h-8 mr-2">
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Russo+One&display=swap" rel="stylesheet">
+                    <h1 class="text-lg font-bold text-text-heading mb-1" style="font-family: 'Russo One', sans-serif;">OpenWiki<br><span class="text-sm tracking-wider">by agent-as-a-judge</span></h1>
+                </div>
+            </div>
+        </nav>
+
+        <main class="ml-80 flex-1 px-8 py-6 max-w-5xl bg-white rounded-lg shadow-sm mb-4">
+            <div class="mb-12" id="overview">
+                <div class="flex items-center justify-between mb-5">
+                    <h1 class="text-2xl font-bold text-text-heading">Overview</h1>
+                    <a href="{{ documentation.url }}" target="_blank" class="flex items-center gap-2 text-text-link text-xs hover:underline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" class="text-text-link">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                        View Repository
+                    </a>
+                </div>
+                
+                <div class="flex flex-wrap items-center mb-3 text-xs text-text-secondary">
+                    <span class="mr-2">Sources:</span>
+                    {% for source in documentation.sources.overview %}
+                    <div class="source-reference">
+                        <svg class="source-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path>
+                        </svg>
+                        {% if source.github_url %}
+                        <a href="{{ source.github_url }}" target="_blank" class="source-link">
+                            {{ source.file }}
+                            {% if source.lines %}<span class="ml-1 text-text-secondary">{{ source.lines }}</span>{% endif %}
+                        </a>
+                        {% else %}
+                            {{ source.file }}
+                            {% if source.lines %}<span class="ml-1 text-text-secondary">{{ source.lines }}</span>{% endif %}
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="markdown-content">{{ documentation.main_purpose|safe }}</div>
+                
+                {% if documentation.use_cases %}
+                <h2 class="text-xl font-semibold text-text-heading mt-8 mb-3">Use Cases and Applications</h2>
+                <div class="markdown-content">{{ documentation.use_cases|safe }}</div>
+                {% endif %}
+                
+                {% if documentation.benchmark_table %}
+                <div class="mt-5 mb-6 overflow-hidden rounded-lg shadow-sm">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Benchmark</th>
+                                <th>Description</th>
+                                <th>Agent Types</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in documentation.benchmark_table %}
+                            <tr>
+                                <td>{{ item.benchmark }}</td>
+                                <td>{{ item.description }}</td>
+                                <td>{{ item.agent_types }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+                
+                {% if documentation.standalone_example %}
+                <div class="code-block-container">
+                    <div class="code-block-title">
+                        <span>example.py</span>
+                        <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><code>{{ documentation.standalone_example }}</code></pre>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="mb-12" id="architecture">
+                <h1 class="text-2xl font-bold text-text-heading mb-5">Architecture</h1>
+                
+                <div class="flex flex-wrap items-center mb-3 text-xs text-text-secondary">
+                    <span class="mr-2">Sources:</span>
+                    {% for source in documentation.sources.architecture %}
+                    <div class="source-reference">
+                        <svg class="source-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path>
+                        </svg>
+                        {% if source.github_url %}
+                        <a href="{{ source.github_url }}" target="_blank" class="source-link">
+                            {{ source.file }}
+                            {% if source.lines %}<span class="ml-1 text-text-secondary">{{ source.lines }}</span>{% endif %}
+                        </a>
+                        {% else %}
+                            {{ source.file }}
+                            {% if source.lines %}<span class="ml-1 text-text-secondary">{{ source.lines }}</span>{% endif %}
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="mb-5 border border-border rounded-lg overflow-hidden">
+                    <div class="collapsible cursor-pointer px-4 py-2 bg-sidebar-bg flex items-center text-sm">
+                        <svg class="collapsible-icon w-3.5 h-3.5 mr-2 text-text-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8z"/>
+                        </svg>
+                        <span class="font-medium">Relevant source files</span>
+                    </div>
+                    <div class="collapsible-content px-4 py-2 bg-white">
+                        <ul class="space-y-1 text-xs">
+                            {% for file in documentation.architecture_files %}
+                            <li class="text-text-secondary">{{ file }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="markdown-content">{{ documentation.architecture|safe }}</div>
+
+                {% if documentation.architectural_philosophy %}
+                <h2 id="architectural-philosophy" class="text-xl font-semibold text-text-heading mt-8 mb-3">Architectural Philosophy</h2>
+                <div class="markdown-content">{{ documentation.architectural_philosophy|safe }}</div>
+                
+                {% if documentation.numbered_concepts %}
+                <ol class="mt-4 ml-5 space-y-3">
+                    {% for concept in documentation.numbered_concepts %}
+                    <li>
+                        <div class="font-semibold text-text-heading text-sm">{{ concept.title }}</div>
+                        <div class="mt-1 text-text-primary text-sm">{{ concept.description }}</div>
+                    </li>
+                    {% endfor %}
+                </ol>
+                {% endif %}
+                {% endif %}
+
+                {% if documentation.flow_diagrams and documentation.flow_diagrams.architecture %}
+                <div class="mermaid-container">
+                    <div class="mermaid-header">
+                        <span>Architecture Overview</span>
+                    </div>
+                    <div class="mermaid-body">
+                        <div class="mermaid-diagram">
+                            <div class="mermaid">
+                                {{ documentation.flow_diagrams.architecture.mermaid_code|safe }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="mb-12" id="core-components">
+                <h1 class="text-2xl font-bold text-text-heading mb-5">Core Components</h1>
+                
+                <div class="flex flex-wrap items-center mb-3 text-xs text-text-secondary">
+                    <span class="mr-2">Sources:</span>
+                    {% for source in documentation.sources.components %}
+                    <div class="source-reference">
+                        <svg class="source-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path>
+                        </svg>
+                        {% if source.github_url %}
+                        <a href="{{ source.github_url }}" target="_blank" class="source-link">
+                            {{ source.file }}
+                            {% if source.lines %}<span class="ml-1 text-text-secondary">{{ source.lines }}</span>{% endif %}
+                        </a>
+                        {% else %}
+                            {{ source.file }}
+                            {% if source.lines %}<span class="ml-1 text-text-secondary">{{ source.lines }}</span>{% endif %}
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                {% if documentation.component_table %}
+                <div class="mb-5 overflow-hidden rounded-lg shadow-sm">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component/Parameter</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in documentation.component_table %}
+                            <tr>
+                                <td><code>{{ item.name }}</code></td>
+                                <td>{{ item.description }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+
+                {% if documentation.flow_diagrams and documentation.flow_diagrams.component_relationships %}
+                <div class="mermaid mb-6">
+                    {{ documentation.flow_diagrams.component_relationships.mermaid_code|safe }}
+                </div>
+                {% endif %}
+
+                {% for component_name, component_data in documentation.components.items() %}
+                <div id="component-{{ component_name|lower|replace(' ', '-') }}" class="component-card">
+                    <div class="component-header">
+                        <h3>{{ component_name }}</h3>
+                    </div>
+                    <div class="component-body">
+                        {% if component_data.purpose %}
+                        <div class="component-section">
+                            <div class="section-title">Purpose</div>
+                            <div class="section-content">{{ component_data.purpose }}</div>
+                        </div>
+                        {% endif %}
+                        
+                        {% if component_data.usage %}
+                        <div class="component-section">
+                            <div class="section-title">Usage</div>
+                            <div class="section-content">{{ component_data.usage }}</div>
+                        </div>
+                        {% endif %}
+                        
+                        {% if component_data.methods_with_descriptions %}
+                        <div class="component-section">
+                            <div class="section-title">Key Methods</div>
+                            <div class="overflow-hidden rounded-lg shadow-sm">
+                                <table class="compact-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Method</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for method in component_data.methods_with_descriptions %}
+                                        <tr>
+                                            <td><code>{{ method.name }}</code></td>
+                                            <td>{{ method.description }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        {% if component_data.parameters %}
+                        <div class="component-section">
+                            <div class="section-title">Parameters</div>
+                            <div class="overflow-hidden rounded-lg shadow-sm">
+                                <table class="compact-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Parameter</th>
+                                            <th>Default Value</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for param in component_data.parameters %}
+                                        <tr>
+                                            <td><code>{{ param.name }}</code></td>
+                                            <td>{{ param.default }}</td>
+                                            <td>{{ param.description }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        {% if component_data.code_example %}
+                        <div class="component-section">
+                            <div class="section-title">Example</div>
+                            <div class="code-block-container">
+                                <div class="code-block-title">
+                                    <span>{{ component_name }}.py</span>
+                                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre><code>{{ component_data.code_example }}</code></pre>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="mb-12" id="usage">
+                <h1 class="text-2xl font-bold text-text-heading mb-5">Using {{ documentation.repo_name }}</h1>
+                
+                <div class="flex flex-wrap items-center mb-3 text-xs text-text-secondary">
+                    <span class="mr-2">Sources:</span>
+                    {% for source in documentation.sources.usage %}
+                    <div class="source-reference">
+                        <svg class="source-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path>
+                        </svg>
+                        {% if source.github_url %}
+                        <a href="{{ source.github_url }}" target="_blank" class="source-link">
+                            {{ source.file }}
+                            {% if source.lines %}<span class="ml-1 text-text-secondary">{{ source.lines }}</span>{% endif %}
+                        </a>
+                        {% else %}
+                            {{ source.file }}
+                            {% if source.lines %}<span class="ml-1 text-text-secondary">{{ source.lines }}</span>{% endif %}
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <h2 class="text-xl font-semibold text-text-heading mb-3">Getting Started</h2>
+                <div class="markdown-content">{{ documentation.getting_started|safe }}</div>
+                
+                {% if documentation.basic_example %}
+                <pre><code>{{ documentation.basic_example }}</code></pre>
+                {% endif %}
+                
+                {% if documentation.advanced_usage %}
+                <h2 class="text-xl font-semibold text-text-heading mt-8 mb-3">Advanced Usage</h2>
+                <div class="markdown-content">{{ documentation.advanced_usage|safe }}</div>
+                {% endif %}
+                
+                {% if documentation.usage_features %}
+                <ul class="mt-4 ml-5 space-y-1 text-sm">
+                    {% for feature in documentation.usage_features %}
+                    <li class="text-text-primary">{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+
+            <div class="mb-12" id="installation">
+                <h1 class="text-2xl font-bold text-text-heading mb-5">Installation & Setup</h1>
+                
+                <div class="flex flex-wrap items-center mb-3 text-xs text-text-secondary">
+                    <span class="mr-2">Sources:</span>
+                    {% for source in documentation.sources.installation %}
+                    <div class="source-reference">
+                        <svg class="source-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path>
+                        </svg>
+                        {% if source.github_url %}
+                        <a href="{{ source.github_url }}" target="_blank" class="source-link">
+                            {{ source.file }}
+                            {% if source.lines %}<span class="ml-1 text-text-secondary">{{ source.lines }}</span>{% endif %}
+                        </a>
+                        {% else %}
+                            {{ source.file }}
+                            {% if source.lines %}<span class="ml-1 text-text-secondary">{{ source.lines }}</span>{% endif %}
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="markdown-content">{{ documentation.installation|safe }}</div>
+                
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const installationSection = document.querySelector('#installation .markdown-content');
+                        if (installationSection) {
+                            const stepRegex = /^(\d+)\.\s+(.+?)\s*$/gm;
+                            let html = installationSection.innerHTML;
+                            
+                            const steps = [];
+                            let match;
+                            while ((match = stepRegex.exec(html)) !== null) {
+                                steps.push({
+                                    number: match[1],
+                                    title: match[2],
+                                    content: ''
+                                });
+                            }
+                            
+                            if (steps.length > 0) {
+                                for (let i = 0; i < steps.length; i++) {
+                                    const currentStep = steps[i];
+                                    const stepTitleRegex = new RegExp(`^${currentStep.number}\\.\\s+${escapeRegExp(currentStep.title)}\\s*`, 'm');
+                                    
+                                    const startIndex = html.search(stepTitleRegex);
+                                    if (startIndex !== -1) {
+                                        let endIndex;
+                                        if (i < steps.length - 1) {
+                                            const nextStepRegex = new RegExp(`^${steps[i+1].number}\\.\\s+${escapeRegExp(steps[i+1].title)}\\s*`, 'm');
+                                            endIndex = html.search(nextStepRegex);
+                                        } else {
+                                            endIndex = html.length;
+                                        }
+                                        
+                                        if (endIndex !== -1) {
+                                            const titleEndIndex = startIndex + html.substring(startIndex).indexOf('\n');
+                                            currentStep.content = html.substring(titleEndIndex, endIndex).trim();
+                                        }
+                                    }
+                                }
+                                
+                                const flowStepsHtml = `
+                                <div class="flow-steps">
+                                    ${steps.map(step => `
+                                    <div class="flow-step">
+                                        <div class="flow-step-number">${step.number}</div>
+                                        <div class="flow-step-content">
+                                            <div class="flow-step-title">${step.title}</div>
+                                            <div class="flow-step-description">${step.content}</div>
+                                        </div>
+                                    </div>
+                                    `).join('')}
+                                </div>
+                                `;
+                                
+                                installationSection.insertAdjacentHTML('beforeend', '<h2 class="text-xl font-semibold text-text-heading mt-8 mb-4">Visual Installation Guide</h2>' + flowStepsHtml);
+                            }
+                        }
+                        
+                        function escapeRegExp(string) {
+                            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                        }
+                    });
+                </script>
+            </div>
+
+            {% if documentation.parameters %}
+            <div class="mb-12" id="parameters">
+                <h1 class="text-2xl font-bold text-text-heading mb-5">Parameters</h1>
+                
+                <div class="overflow-hidden rounded-lg shadow-sm">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Typical Values</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for param in documentation.parameters %}
+                            <tr>
+                                <td><code>{{ param.name }}</code></td>
+                                <td>{{ param.values }}</td>
+                                <td>{{ param.notes }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            {% endif %}
+            
+            {% if documentation.development %}
+            <div class="mb-12" id="development">
+                <h1 class="text-2xl font-bold text-text-heading mb-5">Development Guide</h1>
+                
+                <div class="markdown-content">{{ documentation.development|safe }}</div>
+            </div>
+            {% endif %}
+
+            {% if documentation.advanced_topics %}
+            <div class="mb-12" id="advanced-topics">
+                <h1 class="text-2xl font-bold text-text-heading mb-5">Advanced Topics</h1>
+                
+                <div class="markdown-content">{{ documentation.advanced_topics|safe }}</div>
+                
+                {% if documentation.advanced_topics_sections %}
+                {% for section in documentation.advanced_topics_sections %}
+                <div id="{{ section.id }}" class="mt-8 mb-6">
+                    <h2 class="text-xl font-semibold text-text-heading mb-3">{{ section.title }}</h2>
+                    <div class="markdown-content">{{ section.content|safe }}</div>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+            {% endif %}
+            
+            {% if documentation.examples %}
+            <div class="mb-12" id="examples">
+                <h1 class="text-2xl font-bold text-text-heading mb-5">Examples & Tutorials</h1>
+                
+                <div class="markdown-content">{{ documentation.examples|safe }}</div>
+                
+                {% if documentation.code_examples %}
+                <div class="space-y-6">
+                {% for example in documentation.code_examples %}
+                    <div class="example-card">
+                        <div class="example-header">
+                            <h3 class="example-title">{{ example.title }}</h3>
+                        </div>
+                        <div class="example-body">
+                            <div class="example-description">{{ example.description|safe }}</div>
+                            <div class="code-block-container">
+                                <div class="code-block-title">
+                                    <span>example.py</span>
+                                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre><code>{{ example.code }}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            <div class="text-center text-text-secondary text-xs border-t border-border pt-4 mt-8">
+                Documentation generated at {{ documentation.generated_at|default(documentation.last_indexed) }}
+                {% if documentation.generation_time_seconds %} in {{ documentation.generation_time_seconds }} seconds{% endif %}
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            mermaid.initialize({
+                startOnLoad: true,
+                theme: 'default',
+                flowchart: {
+                    useMaxWidth: true,
+                    htmlLabels: true,
+                    curve: 'basis'
+                },
+                sequence: {
+                    diagramMarginX: 50,
+                    diagramMarginY: 10,
+                    actorMargin: 50,
+                    width: 150,
+                    height: 65,
+                    boxMargin: 10,
+                    boxTextMargin: 5,
+                    noteMargin: 10,
+                    messageMargin: 35,
+                    mirrorActors: true,
+                    bottomMarginAdj: 1,
+                    useMaxWidth: true,
+                    rightAngles: false,
+                    showSequenceNumbers: false
+                },
+                themeVariables: {
+                    primaryColor: '#FFCB45',
+                    primaryTextColor: '#333',
+                    primaryBorderColor: '#FFCB45',
+                    lineColor: '#666',
+                    secondaryColor: '#fafafa',
+                    tertiaryColor: '#f4f4f4'
+                }
+            });
+            
+            const markdownElements = document.querySelectorAll('.markdown-content');
+            markdownElements.forEach(element => {
+                const content = element.innerHTML;
+                if (content.trim()) {
+                    try {
+                        element.innerHTML = marked.parse(content);
+                        
+                        element.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {
+                            heading.textContent = heading.textContent.replace(/^\d+[\.\)\-]\s+/, '');
+                        });
+                    } catch (e) {
+                        console.error('Error parsing markdown:', e);
+                    }
+                }
+            });
+            
+            function detectCodeLanguage(code) {
+                if (code.includes('import ') || code.includes('def ') || code.includes('class ') && code.includes(':')) {
+                    return 'python';
+                } else if (code.includes('function') || code.includes('const ') || code.includes('let ') || code.includes('=>')) {
+                    return 'javascript';
+                } else if (code.trim().startsWith('{') || code.trim().startsWith('[')) {
+                    return 'json';
+                } else if (code.includes('#!/bin/') || code.includes('$ ') || code.includes('pip install') || code.includes('git clone')) {
+                    return 'bash';
+                }
+                return 'plaintext';
+            }
+            
+            function unifyCodeBlocks() {
+                document.querySelectorAll('pre code').forEach(codeElement => {
+                    const preElement = codeElement.parentElement;
+                    
+                    if (preElement.parentElement.classList.contains('code-block-container')) {
+                        return;
+                    }
+                    
+                    if (preElement.parentElement.classList.contains('mermaid')) {
+                        return;
+                    }
+                    
+                    let language = 'plaintext';
+                    const classes = Array.from(codeElement.classList);
+                    const langClass = classes.find(cls => cls.startsWith('language-'));
+                    
+                    if (langClass) {
+                        language = langClass.replace('language-', '');
+                    } else {
+                        language = detectCodeLanguage(codeElement.textContent);
+                        codeElement.classList.add(`language-${language}`);
+                    }
+                    
+                    let fileName = language === 'python' ? 'example.py' : 
+                                  language === 'javascript' ? 'example.js' : 
+                                  language === 'bash' ? 'terminal' : 
+                                  language === 'json' ? 'data.json' :
+                                  'example.txt';
+                    
+                    const container = document.createElement('div');
+                    container.className = 'code-block-container';
+                    
+                    const titleBar = document.createElement('div');
+                    titleBar.className = 'code-block-title';
+                    
+                    const fileNameSpan = document.createElement('span');
+                    fileNameSpan.textContent = fileName;
+                    titleBar.appendChild(fileNameSpan);
+                    
+                    const copyButton = document.createElement('button');
+                    copyButton.className = 'copy-button';
+                    copyButton.textContent = 'Copy';
+                    copyButton.setAttribute('onclick', 'copyCode(this)');
+                    titleBar.appendChild(copyButton);
+                    
+                    const parent = preElement.parentElement;
+                    parent.insertBefore(container, preElement);
+                    container.appendChild(titleBar);
+                    container.appendChild(preElement);
+                    
+                    hljs.highlightBlock(codeElement);
+                });
+            }
+            
+            setTimeout(unifyCodeBlocks, 500);
+            
+            window.copyCode = function(button) {
+                const pre = button.closest('.code-block-container').querySelector('pre');
+                const code = pre.textContent;
+                
+                navigator.clipboard.writeText(code).then(() => {
+                    const originalText = button.textContent;
+                    button.textContent = 'Copied!';
+                    button.style.backgroundColor = '#10b981';
+                    button.style.color = 'white';
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.style.backgroundColor = '';
+                        button.style.color = '';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                    button.textContent = 'Failed!';
+                    button.style.backgroundColor = '#ef4444';
+                    button.style.color = 'white';
+                    
+                    setTimeout(() => {
+                        button.textContent = 'Copy';
+                        button.style.backgroundColor = '';
+                        button.style.color = '';
+                    }, 2000);
+                });
+            }
+            
+            document.querySelectorAll('.collapsible').forEach(collapsible => {
+                collapsible.addEventListener('click', function() {
+                    this.classList.toggle('expanded');
+                });
+            });
+            
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main > div[id]');
+            
+            function highlightActiveLink() {
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('bg-sidebar-active', 'text-text-heading', 'font-medium');
+                    
+                    const href = link.getAttribute('href').substring(1);
+                    if (href === currentSection) {
+                        link.classList.add('bg-sidebar-active', 'text-text-heading', 'font-medium');
+                    }
+                    
+                    if (link.classList.contains('text-xs') && 
+                        link.getAttribute('href').includes(currentSection + '-')) {
+                        link.classList.add('text-text-heading', 'font-medium');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', highlightActiveLink);
+            highlightActiveLink();
+        });
+    </script>
+</body>
+</html> 

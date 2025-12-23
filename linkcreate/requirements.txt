@@ -1,0 +1,31 @@
+# DeepSeek文档处理器依赖包
+
+# HTTP请求库
+requests>=2.28.0
+
+# JSON处理（Python内置，无需安装）
+# json
+
+# 时间处理（Python内置，无需安装）
+# datetime
+
+# 文件系统操作（Python内置，无需安装）
+# os
+
+# 类型提示（Python内置，无需安装）
+# typing
+
+# 可选：更好的HTTP客户端
+httpx>=0.24.0
+
+# 可选：进度条显示
+tqdm>=4.64.0
+
+# 可选：更好的JSON处理
+orjson>=3.8.0
+
+# 可选：配置文件处理
+pyyaml>=6.0
+
+# 可选：日志处理
+loguru>=0.7.0

@@ -1,0 +1,103 @@
+{
+    "name": "38_Object_Tracking_Siamese_OTB50_DL",
+    "query": "I need to create a system for object tracking using a Siamese network and the OTB50 dataset. The OTB50 dataset should be loaded in `src/data_loader.py`. The system should include data augmentation steps such as rotation and scaling, performed in `src/data_loader.py`. Implement the Siamese network in `src/model.py`.  Hyperparameters, such as learning rate and batch size, should be tuned in `src/train.py`. The tracking results should be saved as `results/tracking_results.txt`. Visualize the tracking results with OpenCV and save tracking videos under `results/videos/`. Additionally, create a comprehensive Markdown report that includes details of data preprocessing, model training, and evaluation process and save it as `results/object_tracking_report.md`. Ensure that the system can process new video sequences with minimal adjustments for flexible application. The Markdown report should include a section analyzing the impact of different hyperparameters on the tracking performance.",
+    "tags": [
+        "Computer Vision"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"OTB50\" dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Data augmentation, such as rotation and scaling, is performed in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [],
+            "criteria": "A \"Siamese\"network is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                0,
+                1,
+                2
+            ],
+            "criteria": "Hyperparameters, such as learning rate and batch size, are tuned in `src/train.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "The tracking results are saved as `results/tracking_results.txt`.",
+            "category": "Other",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "Tracking results are visualized with OpenCV and saved to `results/videos/`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "A detailed Markdown document containing data preprocessing, model training, and evaluation processes is created and saved as `results/object_tracking_report.md`.",
+            "category": "Other",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 7,
+            "prerequisites": [
+                6
+            ],
+            "criteria": "The Markdown report should include a section analyzing the impact of different hyperparameters on tracking performance.",
+            "category": "Other",
+            "satisfied": true
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The tracking videos should be saved in high resolution and include annotations that highlight the tracked object.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "Ensure the system is capable of processing new video sequences with minimal modification, allowing for flexible use cases.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false
+}

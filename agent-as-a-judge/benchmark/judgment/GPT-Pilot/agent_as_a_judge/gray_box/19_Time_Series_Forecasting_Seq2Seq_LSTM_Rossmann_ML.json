@@ -1,0 +1,87 @@
+{
+    "name": "19_Time_Series_Forecasting_Seq2Seq_LSTM_Rossmann_ML",
+    "query": "Develop a sales forecasting system using a sequence-to-sequence model based on LSTM with the Rossmann Store Sales dataset, downloading it from Kaggle [here](https://www.kaggle.com/c/rossmann-store-sales/data) and loading it in `src/data_loader.py`. Split the data into training and testing sets and save them in `src/data_loader.py`. Apply a sequence-to-sequence model based on `LSTM` and save the trained model under the `models/saved_models/` directory. Save the forecast results as `results/figures/forecast_results.png`. Save a comparison plot between the predicted and actual values to `results/figures/comparison_plot.png`. Generate an HTML report that includes the prediction results and comparison plots, with some interactive elements for exploring different forecast horizons, and save it as `results/report.html`. Ensure the model is tuned to capture seasonal trends in the sales data.",
+    "tags": [
+        "Supervised Learning",
+        "Time Series Forecasting"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Rossmann Store Sales\" dataset is used, potentially downloaded from Kaggle [this link](https://www.kaggle.com/c/rossmann-store-sales/data) and loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "The data is split into training and testing sets and implemented in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                1
+            ],
+            "criteria": "A sequence-to-sequence model based on \"LSTM\" is used. Please save the trained model under the `models/saved_models/` directory.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [
+                1,
+                2
+            ],
+            "criteria": "The forecast results are plotted and saved as `results/figures/forecast_results.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                1,
+                2,
+                3
+            ],
+            "criteria": "A comparison plot of predicted vs. actual values is saved as `results/figures/comparison_plot.png`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "criteria": "An HTML report containing forecast results and comparison plots is generated and saved as `results/report.html`.",
+            "category": "Visualization",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                5
+            ],
+            "criteria": "The HTML report should include interactive elements that allow users to explore different forecast horizons.",
+            "category": "Human Computer Interaction",
+            "satisfied": false
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The model should be tuned to capture seasonal trends in the sales data for more accurate forecasting.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": true,
+    "is_training_needed": true,
+    "is_web_navigation_needed": true
+}

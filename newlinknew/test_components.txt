@@ -1,0 +1,1 @@
+CAN // CAN总线通信模块，负责消息发送和接收 // CAN_Init(), CAN_SendMessage()

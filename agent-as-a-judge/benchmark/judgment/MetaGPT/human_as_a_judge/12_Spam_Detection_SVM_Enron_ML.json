@@ -1,0 +1,101 @@
+{
+    "name": "12_Spam_Detection_SVM_Enron_ML",
+    "query": "Hello. I need you to build a project to detect spam emails using the Support Vector Machine (SVM) classifier on the Enron-Spam dataset. The project should preprocess the text by removing stop words and punctuation, employ TF-IDF features, perform hyperparameter tuning using GridSearchCV, and save the confusion matrix to `results/figures/confusion_matrix.png`. I also need to write and save a comprehensive report, including precision, recall, F1-score, and the confusion matrix (to be generated as `results/figures/confusion_matrix.png`), under `results/classification_report.pdf`. The Enron-Spam dataset should be loaded in `src/data_loader.py`. Text preprocessing, including removing stop words and punctuation, and calculating TF-IDF features should be performed in `src/data_loader.py`. The SVM classifier should be implemented in `src/model.py`. Hyperparameter tuning should be performed using GridSearchCV in `src/train.py`. It would be helpful if the text preprocessing step is optimized to handle a large number of emails efficiently.",
+    "tags": [
+        "Classification",
+        "Natural Language Processing",
+        "Supervised Learning"
+    ],
+    "requirements": [
+        {
+            "requirement_id": 0,
+            "prerequisites": [],
+            "criteria": "The \"Enron-Spam\" dataset is loaded in `src/data_loader.py`.",
+            "category": "Dataset or Environment",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 1,
+            "prerequisites": [
+                0
+            ],
+            "criteria": "Text preprocessing is performed, including removing stop words and punctuation in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 2,
+            "prerequisites": [
+                0,
+                1
+            ],
+            "criteria": "\"TF-IDF\" features are used in `src/data_loader.py`.",
+            "category": "Data preprocessing and postprocessing",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 3,
+            "prerequisites": [],
+            "criteria": "The \"SVM classifier\" is implemented in `src/model.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 4,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "criteria": "Hyperparameter tuning is performed using \"GridSearchCV\" in `src/train.py`.",
+            "category": "Machine Learning Method",
+            "satisfied": false
+        },
+        {
+            "requirement_id": 5,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ],
+            "criteria": "The confusion matrix is saved as `results/figures/confusion_matrix.png`.",
+            "category": "Visualization",
+            "satisfied": true
+        },
+        {
+            "requirement_id": 6,
+            "prerequisites": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "criteria": "A classification report, including \"precision,\" \"recall,\" \"F1-score,\" and the figure `results/figures/confusion_matrix.png`, is saved as `results/classification_report.pdf`.",
+            "category": "Performance Metrics",
+            "satisfied": true
+        }
+    ],
+    "preferences": [
+        {
+            "preference_id": 0,
+            "criteria": "The text preprocessing step should be optimized to handle a large number of emails efficiently.",
+            "satisfied": null
+        },
+        {
+            "preference_id": 1,
+            "criteria": "The classification report should be comprehensive.",
+            "satisfied": null
+        }
+    ],
+    "is_kaggle_api_needed": false,
+    "is_training_needed": true,
+    "is_web_navigation_needed": false,
+    "executed_successfully": true,
+    "satisfied_all_requirements": false,
+    "satisfied_all_preferences": false
+}
