@@ -11,48 +11,48 @@
 ```mermaid
 graph TD
     %% 输入层
-    subgraph Inputs [输入层]
-        ReqPDF[需求文档 (PDF)]
-        CodeRepo[航天嵌入式项目代码仓库 (C/H)]
+    subgraph Inputs ["输入层"]
+        ReqPDF["需求文档 (PDF)"]
+        CodeRepo["航天嵌入式项目代码仓库 (C/H)"]
     end
 
     %% 处理层 - 需求端
-    subgraph DemandSide [需求处理端]
-        ReqPDF -->|THSJ 生成百科| ReqWiki[需求 Wiki (JSON/MD)]
-        note1[利用 agent-as-a-judge 的 DevRead 模块\n将 PDF 转换为结构化文本]
+    subgraph DemandSide ["需求处理端"]
+        ReqPDF -->|THSJ 生成百科| ReqWiki["需求 Wiki (JSON/MD)"]
+        note1["利用 agent-as-a-judge 的 DevRead 模块\n将 PDF 转换为结构化文本"]
     end
 
     %% 处理层 - 代码端
-    subgraph CodeSide [代码处理端]
-        CodeRepo -->|CHKJ 生成百科| CodeWiki[代码 Wiki (JSON/HTML)]
-        CodeRepo -->|CA-1 函数提取| FuncList[函数目录 (JSON)]
-        FuncList -->|CA-2 函数归类| CompFunc[组件-函数对应表 (TXT)]
+    subgraph CodeSide ["代码处理端"]
+        CodeRepo -->|CHKJ 生成百科| CodeWiki["代码 Wiki (JSON/HTML)"]
+        CodeRepo -->|CA-1 函数提取| FuncList["函数目录 (JSON)"]
+        FuncList -->|CA-2 函数归类| CompFunc["组件-函数对应表 (TXT)"]
         
         %% 对应组件
-        note2[newlink (Code Analyzer)]
+        note2["newlink (Code Analyzer)"]
     end
 
     %% 处理层 - 文档生成
-    subgraph DocGen [文档生成端]
-        CompFunc -->|LINK 建立| FinalDoc[最终结果 / 文档]
+    subgraph DocGen ["文档生成端"]
+        CompFunc -->|LINK 建立| FinalDoc["最终结果 / 文档"]
         ReqWiki -.->|辅助生成| FinalDoc
         
         %% 对应组件
-        note3[linkcreate (Doc Generator)]
+        note3["linkcreate (Doc Generator)"]
     end
 
     %% 验证层
-    subgraph Verify [验证与溯源]
-        ReqWiki -->|输入| FinalLink[finallink (溯源验证)]
+    subgraph Verify ["验证与溯源"]
+        ReqWiki -->|输入| FinalLink["finallink (溯源验证)"]
         CompFunc -->|输入| FinalLink
-        FinalLink -->|输出| Report[验证报告 & 缺失功能分析]
+        FinalLink -->|输出| Report["验证报告 & 缺失功能分析"]
     end
 
     %% 评估层
-    subgraph Eval [元评估层]
-        FinalDoc -->|被评估| AgentJudge[agent-as-a-judge]
+    subgraph Eval ["元评估层"]
+        FinalDoc -->|被评估| AgentJudge["agent-as-a-judge"]
         Report -->|被评估| AgentJudge
-        AgentJudge -->|输出| QualityScore[质量评分]
+        AgentJudge -->|输出| QualityScore["质量评分"]
     end
 ```
 
